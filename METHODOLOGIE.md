@@ -1,6 +1,6 @@
 # Méthodologie — Boussole électorale, élection générale québécoise du 5 octobre 2026
 
-> **Statut : version 1.0, approuvée par Yanick Huet le 11 septembre 2026.**
+> **Statut : version 1.0.1, approuvée par Yanick Huet le 11 septembre 2026.** (La v1.0.1 précise le calcul de la section 8 ; voir `data/journal-modifications.md`.)
 > Ce document a été publié **avant** la collecte des données : les règles ne peuvent pas être ajustées après coup en fonction des résultats. Toute modification ultérieure sera datée, justifiée et visible dans l'historique du dépôt.
 
 Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Québec), **PCQ** (Parti conservateur du Québec), **PLQ** (Parti libéral du Québec), **PQ** (Parti Québécois), **QS** (Québec solidaire).
@@ -286,7 +286,7 @@ Le résultat se situe entre −1 et +1.
 - Les résultats indiquent :
   - le nombre de questions laissées sans opinion, et leur liste ;
   - pour chacune, si les partis du groupe de tête et le parti suivant y ont des positions opposées (écart d'au moins 2 points entre leurs valeurs) ;
-  - **l'intervalle de sensibilité** : l'écart minimal et l'écart maximal entre les deux partis comparés à la section 10.2.4, selon les réponses que vous auriez pu donner à ces questions. Le calcul se fait par énumération des cinq réponses possibles (poids 1). Au-delà de 7 questions sans opinion, on utilise une borne calculée question par question, et le texte le précise.
+  - **l'intervalle de sensibilité** : l'écart minimal et l'écart maximal entre les deux partis comparés à la section 10.2.4, selon les réponses que vous auriez pu donner à ces questions (poids 1). Le calcul est exact, quel que soit le nombre de questions. Le poids d'une question ne dépend pas de la réponse choisie ; les dénominateurs sont donc fixes, et l'écart est une somme de termes indépendants, un par question. Prendre pour chaque question la réponse la plus favorable à un parti donne le même résultat que d'essayer toutes les combinaisons.
 
 ---
 

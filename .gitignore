@@ -10,3 +10,10 @@ Thumbs.db
 
 # Notes de recherche brutes, avant validation
 recherche/
+
+# Configuration locale de l'outil de développement
+.claude/
+
+# Documents sources téléchargés pendant la recherche (jamais publiés dans le dépôt)
+/*.pdf
+

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+ * Palette volontairement neutre (METHODOLOGIE.md, section 11) :
+ * aucune couleur associée à un parti. Tous les partis partagent la même teinte ;
+ * vos réponses ont une couleur d'accent (violet) qu'aucun des cinq partis n'utilise.
+ */
+@theme {
+  --color-fond: #fafaf9;
+  --color-surface: #ffffff;
+  --color-encre: #1c1917;
+  --color-encre-douce: #57534e;
+  --color-trait: #e7e5e4;
+  --color-parti: #57534e;
+  --color-parti-clair: #d6d3d1;
+  --color-vous: #6d28d9;
+  --color-vous-clair: #ede9fe;
+  --color-alerte: #92400e;
+  --color-alerte-fond: #fffbeb;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  background: var(--color-fond);
+  color: var(--color-encre);
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-vous);
+  outline-offset: 2px;
+}
+
+/* Rendu de METHODOLOGIE.md */
+.texte-long {
+  line-height: 1.65;
+  max-width: 48rem;
+}
+.texte-long h1 { font-size: 1.75rem; font-weight: 700; margin: 0 0 1rem; }
+.texte-long h2 { font-size: 1.35rem; font-weight: 700; margin: 2.25rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--color-trait); }
+.texte-long h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+.texte-long p, .texte-long ul, .texte-long ol, .texte-long pre, .texte-long table, .texte-long blockquote { margin: 0.75rem 0; }
+.texte-long ul { list-style: disc; padding-left: 1.5rem; }
+.texte-long ol { list-style: decimal; padding-left: 1.5rem; }
+.texte-long li { margin: 0.25rem 0; }
+.texte-long a { color: var(--color-vous); text-decoration: underline; }
+.texte-long code { font-size: 0.9em; background: #f5f5f4; padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+.texte-long pre { background: #f5f5f4; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.85rem; }
+.texte-long pre code { background: none; padding: 0; }
+.texte-long blockquote { border-left: 3px solid var(--color-trait); padding-left: 1rem; color: var(--color-encre-douce); }
+.texte-long table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 0.9rem; }
+.texte-long th, .texte-long td { border: 1px solid var(--color-trait); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.texte-long th { background: #f5f5f4; }
+.texte-long hr { border: 0; border-top: 1px solid var(--color-trait); margin: 2rem 0; }

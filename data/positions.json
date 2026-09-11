@@ -1,0 +1,67 @@
+{
+  "version": "0.1-brouillon",
+  "date_mise_a_jour": "2026-09-11T12:00",
+  "date_declenchement": "2026-08-27",
+  "source_declenchement": "https://www.electionsquebec.qc.ca/actualites/cest-parti-les-elections-provinciales-auront-lieu-le-5-octobre-2026/",
+  "lance": false,
+  "partis": [
+    {
+      "sigle": "CAQ", "nom": "Coalition avenir Québec", "le": "la CAQ", "du": "de la CAQ",
+      "chef": { "nom": "Christine Fréchette", "depuis": "2026-04-12", "source": "https://ici.radio-canada.ca/info/en-direct/1013685/chef-caq-course-christine-frechette-bernard-drainville" },
+      "resultat_2022": { "pourcentage": 40.98, "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/" }
+    },
+    {
+      "sigle": "PCQ", "nom": "Parti conservateur du Québec", "le": "le PCQ", "du": "du PCQ",
+      "chef": { "nom": "Éric Duhaime", "depuis": "2021-04-17", "source": "https://conservateur.quebec/notre-chef/" },
+      "resultat_2022": { "pourcentage": 12.91, "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/" }
+    },
+    {
+      "sigle": "PLQ", "nom": "Parti libéral du Québec", "le": "le PLQ", "du": "du PLQ",
+      "chef": { "nom": "Charles Milliard", "depuis": "2026-02-13", "source": "https://plq.org/charles-milliard/" },
+      "resultat_2022": { "pourcentage": 14.37, "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/" }
+    },
+    {
+      "sigle": "PQ", "nom": "Parti Québécois", "le": "le PQ", "du": "du PQ",
+      "chef": { "nom": "Paul St-Pierre Plamondon", "depuis": "2020-10-09", "source": "https://ici.radio-canada.ca/nouvelle/1739956/part-quebecois-chef-course-election-candidats" },
+      "resultat_2022": { "pourcentage": 14.61, "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/" }
+    },
+    {
+      "sigle": "QS", "nom": "Québec solidaire", "le": "QS", "du": "de QS",
+      "chef": { "nom": "Ruba Ghazal", "depuis": "2025-11-09", "source": "https://quebecsolidaire.net/ruba-ghazal", "note": "Co-porte-parole ; désignée par le parti candidate au poste de première ministre (congrès du 9 novembre 2025)." },
+      "resultat_2022": { "pourcentage": 15.43, "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/" }
+    }
+  ],
+  "axes": [
+    {
+      "id": "economique",
+      "libelle": "Axe économique",
+      "pole_negatif": "Rôle accru de l'État",
+      "pole_positif": "Rôle accru du marché"
+    },
+    {
+      "id": "constitutionnel",
+      "libelle": "Axe constitutionnel",
+      "pole_negatif": "Cadre fédéral",
+      "pole_positif": "Souveraineté du Québec"
+    },
+    {
+      "id": "identitaire",
+      "libelle": "Axe identitaire",
+      "pole_negatif": "Latitude individuelle",
+      "pole_positif": "Règles communes"
+    }
+  ],
+  "themes": [
+    { "id": "fiscalite", "libelle": "Fiscalité et finances publiques", "axe": "economique" },
+    { "id": "sante", "libelle": "Santé", "axe": "economique" },
+    { "id": "education", "libelle": "Éducation", "axe": "economique" },
+    { "id": "economie", "libelle": "Économie et réglementation des entreprises", "axe": "economique" },
+    { "id": "environnement", "libelle": "Environnement et énergie", "axe": "economique" },
+    { "id": "logement", "libelle": "Logement et habitation", "axe": "economique" },
+    { "id": "services_sociaux", "libelle": "Services sociaux et organismes communautaires", "axe": "economique" },
+    { "id": "constitution", "libelle": "Question constitutionnelle", "axe": "constitutionnel" },
+    { "id": "immigration_langue", "libelle": "Immigration et langue", "axe": "identitaire" },
+    { "id": "laicite_identite", "libelle": "Laïcité et identité", "axe": "identitaire" }
+  ],
+  "questions": []
+}
