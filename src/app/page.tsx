@@ -53,7 +53,7 @@ export default function Accueil() {
             À la fin, une explication réponse par réponse.
           </p>
           {donneesPretes ? (
-            <Link
+            <Link prefetch={false}
               href="/boussole"
               className="inline-flex items-center min-h-12 px-6 bg-ancre text-white font-bold no-underline rounded-[3px] hover:bg-ancre-fonce"
             >
@@ -107,7 +107,7 @@ export default function Accueil() {
               documents publiés, les valeurs de ces poids pour l&apos;édition québécoise 2026.
             </>
           }
-          liens={<Link href="/methodologie">La formule des coordonnées (méthodologie, section 7)</Link>}
+          liens={<Link prefetch={false} href="/methodologie">La formule des coordonnées (méthodologie, section 7)</Link>}
         />
 
         <Constat
@@ -142,8 +142,8 @@ export default function Accueil() {
           }
           liens={
             <>
-              <Link href="/methodologie">Les règles de rédaction</Link> ·{" "}
-              <Link href="/methodologie">Le rapport de l&apos;audit</Link>
+              <Link prefetch={false} href="/methodologie">Les règles de rédaction</Link> ·{" "}
+              <Link prefetch={false} href="/methodologie">Le rapport de l&apos;audit</Link>
             </>
           }
         />
@@ -179,7 +179,7 @@ export default function Accueil() {
               leurs résultats, qui exige de remplir le questionnaire.
             </>
           }
-          liens={<Link href="/methodologie">Comment le texte est construit (méthodologie, section 10)</Link>}
+          liens={<Link prefetch={false} href="/methodologie">Comment le texte est construit (méthodologie, section 10)</Link>}
         />
       </section>
 
@@ -245,8 +245,8 @@ export default function Accueil() {
           </li>
         </ul>
         <p className="text-petit">
-          <Link href="/methodologie">Méthodologie complète</Link> ·{" "}
-          <Link href="/positions">Toutes les positions et leurs sources</Link> · Données à jour au{" "}
+          <Link prefetch={false} href="/methodologie">Méthodologie complète</Link> ·{" "}
+          <Link prefetch={false} href="/positions">Toutes les positions et leurs sources</Link> · Données à jour au{" "}
           {formaterDate(donnees.date_mise_a_jour)}
         </p>
       </section>

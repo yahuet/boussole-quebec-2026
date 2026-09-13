@@ -76,14 +76,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         )}
         <header className="bg-ancre text-white">
           <div className="mx-auto max-w-[70rem] px-4 py-3 flex items-center gap-4">
-            <Link href="/" className="font-bold text-white no-underline text-h4 mr-auto">
+            <Link prefetch={false} href="/" className="font-bold text-white no-underline text-h4 mr-auto">
               {NOM_SITE}
             </Link>
             <nav aria-label="Navigation principale" className="hidden md:block">
               <ul className="flex gap-6">
                 {LIENS.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-white no-underline hover:underline">
+                    <Link prefetch={false} href={l.href} className="text-white no-underline hover:underline">
                       {l.texte}
                     </Link>
                   </li>
@@ -101,7 +101,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <ul>
                   {LIENS.map((l) => (
                     <li key={l.href} className="border-b border-trait last:border-0">
-                      <Link href={l.href} className="block px-4 py-3 min-h-12 text-ancre">
+                      <Link prefetch={false} href={l.href} className="block px-4 py-3 min-h-12 text-ancre">
                         {l.texte}
                       </Link>
                     </li>
@@ -124,7 +124,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {[...LIENS.slice(1), { href: "/credits", texte: "Crédits" }].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href}>{l.texte}</Link>
+                  <Link prefetch={false} href={l.href}>{l.texte}</Link>
                 </li>
               ))}
               <li>

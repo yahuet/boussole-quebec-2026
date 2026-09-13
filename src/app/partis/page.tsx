@@ -56,7 +56,7 @@ export default function Partis() {
               </a>
             </li>
             <li>
-              <Link href="/positions">Positions dans la matrice</Link>
+              <Link prefetch={false} href="/positions">Positions dans la matrice</Link>
             </li>
           </ul>
         </>
@@ -74,7 +74,7 @@ export default function Partis() {
         </p>
         <p className="text-petit text-encre-douce">
           Résumés à jour au {formaterDate(infos.a_jour_au)}. Pourquoi ces cinq partis : ce sont ceux qui ont obtenu au
-          moins 5 % des votes valides en 2022 (<Link href="/methodologie">méthodologie, section 1</Link>). Aucun logo
+          moins 5 % des votes valides en 2022 (<Link prefetch={false} href="/methodologie">méthodologie, section 1</Link>). Aucun logo
           n&apos;est affiché, pour aucun parti.
           {!portraits && " Les portraits s'afficheront seulement lorsqu'une photo sous licence libre sera disponible pour chacun des cinq chefs ; d'ici là, des initiales les remplacent pour tous."}
         </p>

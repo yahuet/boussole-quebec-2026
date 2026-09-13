@@ -65,7 +65,7 @@ export default function Resultats() {
       <div className="space-y-4">
         <h1 className="text-h2">Aucune réponse trouvée</h1>
         <p>Vos réponses ne sont gardées que dans cet onglet, sauf si vous avez choisi de les conserver sur cet appareil.</p>
-        <Link href="/boussole" className="inline-block rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
+        <Link prefetch={false} href="/boussole" className="inline-block rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
           Commencer le questionnaire
         </Link>
       </div>
@@ -116,7 +116,7 @@ export default function Resultats() {
           </span>
         </label>
         <div className="flex flex-wrap gap-3 text-petit">
-          <Link href="/boussole" className="rounded-[3px] border border-trait px-4 py-2">
+          <Link prefetch={false} href="/boussole" className="rounded-[3px] border border-trait px-4 py-2">
             Modifier mes réponses
           </Link>
           <button

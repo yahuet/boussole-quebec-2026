@@ -240,7 +240,7 @@ function FinSansChef({ onRetour }: { onRetour: () => void }) {
         <button type="button" className="rounded-[3px] border border-trait px-4 py-2" onClick={onRetour}>
           Précédente
         </button>
-        <Link href="/boussole/resultats" className="rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
+        <Link prefetch={false} href="/boussole/resultats" className="rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
           Voir mes résultats
         </Link>
       </div>

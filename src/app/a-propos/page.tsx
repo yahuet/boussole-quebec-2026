@@ -114,7 +114,7 @@ export default function APropos() {
         </p>
         {IDENTIFICATION_EDITEUR && <p>{IDENTIFICATION_EDITEUR}</p>}
         <p className="text-petit">
-          <Link href="/credits">Crédits des images et des polices</Link>
+          <Link prefetch={false} href="/credits">Crédits des images et des polices</Link>
         </p>
       </section>
     </div>

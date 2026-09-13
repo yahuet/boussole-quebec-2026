@@ -33,7 +33,7 @@ export default function Credits() {
                   Auteur : {c.auteur} · Licence : <a href={c.licence_url}>{c.licence}</a>
                 </p>
                 <p>
-                  Source : <a href={c.source}>{c.source}</a>
+                  Source : <a href={c.source} className="[overflow-wrap:anywhere]">{c.source}</a>
                 </p>
                 {c.modifications && <p>Modifications : {c.modifications}</p>}
                 <p className="text-petit text-encre-douce">Consultée le {formaterDate(c.consulte_le)}</p>
@@ -55,7 +55,7 @@ export default function Credits() {
                 Auteur : {p.auteur} · Licence : <a href={p.licence_url}>{p.licence}</a>
               </p>
               <p>
-                Source : <a href={p.source}>{p.source}</a>
+                Source : <a href={p.source} className="[overflow-wrap:anywhere]">{p.source}</a>
               </p>
               <p className="text-petit text-encre-douce">
                 Hébergée sur ce site, sans serveur externe · consultée le {formaterDate(p.consulte_le)}
