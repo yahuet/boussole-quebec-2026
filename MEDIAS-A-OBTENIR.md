@@ -87,3 +87,21 @@ Des photos de qualité inégale peuvent avantager un chef sur un autre, ce que l
 - **Téléchargement :** si tu retiens l'option 1, je peux télécharger les cinq fichiers depuis Commons, avec ton accord (5 fichiers JPEG de 100 à 800 Ko environ), ou tu me les fournis.
 - **Préparation :** je prépare ensuite le script de recadrage et de conversion (AVIF et WebP, deux tailles), identique pour les cinq.
 - **Crédits :** je remplis `data/credits.json`, et la page `/credits` se met à jour d'elle-même.
+
+---
+
+## Décision et réalisation (13 septembre 2026)
+
+**Décision de Yanick Huet : option 1.** Les cinq portraits sont utilisés.
+
+- **Téléchargement :** les cinq fichiers ont été téléchargés depuis Wikimedia Commons, avec les métadonnées de licence relevées par l'API. Les originaux sont dans `medias-sources/`, non publiés dans le dépôt.
+- **Vérifications faites :**
+  - **Christine Fréchette :** la licence CC BY de la vidéo d'origine de TVA Nouvelles a été vérifiée par un examinateur de Commons (Asclepias, 3 janvier 2026).
+  - **Charles Milliard :** la description du fichier indique « Portrait de Charles Milliard 2024 ».
+  - **Ruba Ghazal :** la photo d'origine a été téléversée par son auteur (QuebecSolidaireMercier, 2018), comme œuvre personnelle.
+- **Changement pour le PQ.** La photo recommandée (Alexis G., 2020) montrait Paul St-Pierre Plamondon en pleine prise de parole, le regard détourné, micro en main, alors que les quatre autres chefs sourient vers l'objectif. Pour ne pas le désavantager, elle est remplacée par [File:Paul.St-Pierre.Plamondon.cropped.jpg](https://commons.wikimedia.org/wiki/File:Paul.St-Pierre.Plamondon.cropped.jpg), de UnPingouin (août 2021, CC BY-SA 4.0, œuvre personnelle).
+- **Traitement :** même règle de recadrage pour les cinq (`scripts/portraits.json`, `scripts/preparer-portraits.ts`), puis AVIF et WebP en 320 × 400 et 640 × 800.
+  - La photo de Christine Fréchette est agrandie de 11 % pour la grande taille.
+  - La photo du PQ, plus étroite, a un cadre à peine plus serré (facteur 3,13 au lieu de 3,2).
+- **Crédits :** `data/credits.json` est rempli ; la page `/credits` et les légendes sous les photos affichent l'auteur, la licence, la source et les modifications.
+- **Détail signalé :** sur la photo d'Éric Duhaime, une petite épinglette du parti est visible au bas du cadre. Elle fait partie de la photographie d'origine, qui n'a pas été retouchée.

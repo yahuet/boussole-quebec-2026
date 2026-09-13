@@ -54,7 +54,8 @@ export default function Portrait({
         />
       </picture>
       <figcaption className="mt-1 text-petit text-encre-douce">
-        Photo : {credit.auteur}, <a href={credit.licence_url}>{credit.licence}</a>
+        Photo : {credit.auteur}, <a href={credit.licence_url}>{credit.licence}</a> ·{" "}
+        <a href="/credits">source et modifications</a>
       </figcaption>
     </figure>
   );

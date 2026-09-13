@@ -1,0 +1,38 @@
+{
+  "regle": "Même règle pour les cinq : hauteur du cadre = 3,2 × (distance yeux-menton) ; yeux à 40 % de la hauteur ; largeur = 0,8 × hauteur (4:5) ; cadre centré sur le visage, décalé seulement pour rester dans l'image. Aucune retouche du fond.",
+  "facteur_hauteur": 3.2,
+  "position_yeux": 0.4,
+  "portraits": {
+    "CAQ": {
+      "source": "medias-sources/CAQ.jpg",
+      "yeux_y": 315,
+      "menton_y": 540,
+      "centre_x": 330
+    },
+    "PCQ": {
+      "source": "medias-sources/PCQ.jpg",
+      "yeux_y": 560,
+      "menton_y": 960,
+      "centre_x": 520
+    },
+    "PLQ": {
+      "source": "medias-sources/PLQ.jpg",
+      "yeux_y": 665,
+      "menton_y": 1150,
+      "centre_x": 620
+    },
+    "PQ": {
+      "source": "medias-sources/PQ.jpg",
+      "yeux_y": 630,
+      "menton_y": 1110,
+      "centre_x": 640
+    },
+    "QS": {
+      "source": "medias-sources/QS.jpg",
+      "yeux_y": 460,
+      "menton_y": 790,
+      "centre_x": 500
+    }
+  },
+  "note": "PQ : la photo au micro (Alexis G., 2020) a été écartée parce qu'elle montre le chef en pleine prise de parole, le regard détourné, contrairement aux quatre autres portraits ; remplacée par la photo d'UnPingouin (2021). Sa largeur limite le cadre à 1202 × 1503 px (facteur 3,13 au lieu de 3,2)."
+}

@@ -17,3 +17,6 @@ recherche/
 # Documents sources téléchargés pendant la recherche (jamais publiés dans le dépôt)
 /*.pdf
 
+
+# Photos originales téléchargées (les versions publiées sont dans public/medias)
+/medias-sources/

@@ -29,3 +29,22 @@ describe("fiches des partis (plan de design, section 5)", () => {
     }
   });
 });
+
+describe("portraits (étape D)", () => {
+  const credits = JSON.parse(readFileSync("data/credits.json", "utf8")) as {
+    images: { fichier: string; sigle: string; auteur: string; licence: string; source: string }[];
+  };
+  const portraits = credits.images.filter((i) => i.fichier.startsWith("portraits/"));
+
+  it("couvrent les cinq partis ou aucun", () => {
+    expect([0, positions.partis.length]).toContain(portraits.length);
+  });
+
+  it("ont tous un auteur, une licence libre et une source", () => {
+    for (const p of portraits) {
+      expect(p.auteur.trim(), p.sigle).not.toBe("");
+      expect(p.licence, p.sigle).toMatch(/^(CC BY|CC BY-SA|CC0|Domaine public)/);
+      expect(p.source, p.sigle).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    }
+  });
+});
