@@ -6,10 +6,10 @@ import type { Reponses } from "@/lib/types";
 /** Détail question par question : votre réponse et la position de chaque parti. */
 export default function DetailQuestions({ reponses, ordre }: { reponses: Reponses; ordre: string[] }) {
   return (
-    <details className="rounded-lg border border-trait bg-surface">
+    <details className="rounded-[3px] border border-trait bg-surface">
       <summary className="cursor-pointer px-4 py-3 font-semibold">Détail question par question</summary>
       <div className="overflow-x-auto px-4 pb-4">
-        <table className="w-full text-sm border-collapse min-w-[40rem]">
+        <table className="w-full text-petit border-collapse min-w-[40rem]">
           <thead>
             <tr className="text-left border-b border-trait">
               <th className="py-2 pr-3 font-semibold">Question</th>
@@ -46,7 +46,7 @@ export default function DetailQuestions({ reponses, ordre }: { reponses: Reponse
                           {LIBELLES_POSITION[p.valeur]}
                         </a>
                         {a !== null && (
-                          <span className="block text-xs text-encre-douce">
+                          <span className="block text-petit text-encre-douce">
                             accord {Math.round(100 * scoreAccord(a, p.valeur))} %
                           </span>
                         )}

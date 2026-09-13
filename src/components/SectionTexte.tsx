@@ -5,7 +5,7 @@ import { donnees } from "@/lib/donnees";
 export default function SectionTexte({ section }: { section: Section }) {
   return (
     <section className="space-y-3" aria-labelledby={`section-${section.id}`}>
-      <h2 id={`section-${section.id}`} className="text-xl font-semibold">
+      <h2 id={`section-${section.id}`} className="text-h3">
         {section.titre}
       </h2>
       {section.blocs.map((b, i) => {
@@ -46,9 +46,9 @@ export default function SectionTexte({ section }: { section: Section }) {
 
 function CarteQuestion({ item }: { item: ItemQuestion }) {
   return (
-    <li className="rounded-lg border border-trait bg-surface p-4 space-y-2">
+    <li className="rounded-[3px] border border-trait bg-surface p-4 space-y-2">
       <p className="font-medium">{item.enonce}</p>
-      <p className="text-sm">
+      <p className="text-petit">
         <span className="text-encre-douce">Votre réponse : </span>
         <span className="font-semibold text-vous">{item.votreReponse}</span>
         {item.important && <span className="ml-2 text-encre-douce">(compte beaucoup pour vous)</span>}
@@ -59,7 +59,7 @@ function CarteQuestion({ item }: { item: ItemQuestion }) {
         const pos = q?.positions[p.sigle];
         const drapeaux = pos && pos.statut === "documentee" ? pos.drapeaux : [];
         return (
-          <div key={p.sigle} className="text-sm border-l-2 border-parti-clair pl-3 space-y-1">
+          <div key={p.sigle} className="text-petit border-l-2 border-trait pl-3 space-y-1">
             <p>
               <span className="text-encre-douce">Position {parti?.du ?? p.sigle} : </span>
               <span className="font-semibold">{p.libelle}</span>
@@ -72,7 +72,7 @@ function CarteQuestion({ item }: { item: ItemQuestion }) {
                 </a>
                 {p.date && <span className="text-encre-douce"> · {formaterDate(p.date)}</span>}
                 {drapeaux.map((d) => (
-                  <span key={d} className="ml-2 rounded bg-alerte-fond text-alerte px-1.5 py-0.5 text-xs">
+                  <span key={d} className="ml-2 rounded bg-alerte-fond text-alerte px-1.5 py-0.5 text-petit">
                     {LIBELLES_DRAPEAU[d]}
                   </span>
                 ))}

@@ -6,7 +6,7 @@ import type { RapportAudit } from "@/lib/audit";
 import { donnees } from "@/lib/donnees";
 import { formaterDate } from "@/lib/libelles";
 
-export const metadata: Metadata = { title: "Méthodologie — Boussole électorale Québec 2026" };
+export const metadata: Metadata = { title: "Méthodologie" };
 
 const STATUTS: Record<string, string> = { ok: "Respecté", echec: "En échec", alerte: "Alerte", info: "Information" };
 
@@ -28,15 +28,15 @@ export default function Methodologie() {
   return (
     <div className="space-y-8">
       {alertes.length > 0 && (
-        <section className="rounded-lg border border-amber-300 bg-alerte-fond p-4 space-y-2" role="alert">
+        <section className="rounded-[3px] border border-alerte bg-alerte-fond p-4 space-y-2" role="alert">
           <h2 className="font-semibold text-alerte">Alerte publique de l&apos;audit de neutralité</h2>
-          <p className="text-sm">
+          <p className="text-petit">
             Depuis la dernière mise à jour des positions, au moins un critère qui dépend des données n&apos;est plus
             respecté. Les positions sont publiées quand même, parce qu&apos;elles reflètent ce que les partis ont dit
             (section 12). Voici les chiffres :
           </p>
           {alertes.map((c) => (
-            <div key={c.id} className="text-sm">
+            <div key={c.id} className="text-petit">
               <p className="font-medium">
                 {c.id} — {c.titre}
               </p>
@@ -51,12 +51,12 @@ export default function Methodologie() {
       )}
 
       {incomplets.length > 0 && (
-        <section className="rounded-lg border border-amber-300 bg-alerte-fond p-4 space-y-2">
+        <section className="rounded-[3px] border border-alerte bg-alerte-fond p-4 space-y-2">
           <h2 className="font-semibold">Thèmes incomplets dans la version actuelle des données</h2>
-          <p className="text-sm">
+          <p className="text-petit">
             Ces thèmes comptent moins de 3 questions : aucune autre mesure ne remplissait les critères de la section 2.3.
           </p>
-          <ul className="list-disc pl-6 text-sm space-y-1">
+          <ul className="list-disc pl-6 text-petit space-y-1">
             {incomplets.map((t) => (
               <li key={t.id}>
                 <span className="font-medium">
@@ -73,13 +73,13 @@ export default function Methodologie() {
 
       {audit && (
         <section className="space-y-3 max-w-3xl">
-          <h2 className="text-xl font-semibold">Résultat du dernier audit de neutralité</h2>
-          <p className="text-sm text-encre-douce">
+          <h2 className="text-h3">Résultat du dernier audit de neutralité</h2>
+          <p className="text-petit text-encre-douce">
             Données version {audit.version}, à jour au {formaterDate(audit.date_mise_a_jour)}. Le script est public :{" "}
             <code>scripts/audit-neutralite.ts</code>.
           </p>
           <div className="overflow-x-auto">
-            <table className="text-sm border-collapse w-full">
+            <table className="text-petit border-collapse w-full">
               <thead>
                 <tr className="text-left border-b border-trait">
                   <th className="py-2 pr-3">Critère</th>

@@ -1,61 +1,140 @@
 @import "tailwindcss";
 
 /*
- * Palette volontairement neutre (METHODOLOGIE.md, section 11) :
- * aucune couleur associée à un parti. Tous les partis partagent la même teinte ;
- * vos réponses ont une couleur d'accent (violet) qu'aucun des cinq partis n'utilise.
+ * La boussole des élections — palette et typographie (design/PLAN-DESIGN.md, sections 1 et 2).
+ *
+ * Règles :
+ * - Aucune couleur de parti dans l'habillage. Les couleurs des partis n'apparaissent
+ *   qu'à l'intérieur des points de données des graphiques (méthodologie §11).
+ * - Le bleu fleuve est la couleur de l'outil : liens, boutons, titres, focus.
+ * - Le vert-de-gris a un seul rôle : ce qui vient de vous (vos réponses, votre point,
+ *   votre progression). Il ne sert à rien d'autre.
+ * - Contrastes vérifiés (WCAG 2.1 AA) : voir le plan de design.
  */
 @theme {
-  --color-fond: #fafaf9;
+  --color-fond: #f5f7fa;
   --color-surface: #ffffff;
-  --color-encre: #1c1917;
-  --color-encre-douce: #57534e;
-  --color-trait: #e7e5e4;
-  --color-parti: #57534e;
-  --color-parti-clair: #d6d3d1;
-  --color-vous: #6d28d9;
-  --color-vous-clair: #ede9fe;
-  --color-alerte: #92400e;
-  --color-alerte-fond: #fffbeb;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --color-encre: #232b36; /* ardoise, texte : 13,3:1 sur le fond */
+  --color-encre-douce: #5e6773; /* gris d'étain, métadonnées : 5,34:1 */
+  --color-trait: #d5dbe3; /* filets décoratifs */
+  --color-trait-fort: #7b8591; /* bordures de composants interactifs : 3,49:1 */
+  --color-ancre: #1f4e6e; /* bleu fleuve : 8,25:1 ; blanc dessus 8,85:1 */
+  --color-ancre-fonce: #173b53;
+  --color-ancre-pale: #e8eef3;
+  --color-vous: #356a66; /* vert-de-gris, SEULEMENT ce qui vient de vous : 5,75:1 */
+  --color-vous-pale: #e4efed;
+  --color-parti: #5e6773; /* barres de proximité : même teinte neutre pour tous les partis */
+  --color-alerte: #7a3e00;
+  --color-alerte-fond: #fdf3e1;
+
+  --font-sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Échelle typographique (corps de base 18 px, rapport ≈ 1,25) */
+  --text-petit: 0.9375rem; /* 15 px : jamais moins */
+  --text-petit--line-height: 1.5;
+  --text-corps: 1.125rem; /* 18 px */
+  --text-corps--line-height: 1.6;
+  --text-h4: 1.25rem; /* 20 px */
+  --text-h4--line-height: 1.35;
+  --text-h3: 1.4375rem; /* 23 px */
+  --text-h3--line-height: 1.3;
+  --text-h2: 1.6875rem; /* 27 px */
+  --text-h2--line-height: 1.25;
+  --text-h1: 2rem; /* 32 px */
+  --text-h1--line-height: 1.2;
 }
 
-html {
-  background: var(--color-fond);
-  color: var(--color-encre);
+@layer base {
+  html {
+    background: var(--color-fond);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: var(--text-corps);
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --text-h1: 2.5rem; /* 40 px */
+      --text-h2: 1.875rem; /* 30 px */
+      --text-h3: 1.5rem; /* 24 px */
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ancre);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  a {
+    color: var(--color-ancre);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Focus clavier : anneau bleu fleuve de 3 px, décalé sur un liseré blanc, visible sur tous les fonds. */
+  :focus-visible {
+    outline: 3px solid var(--color-ancre);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #ffffff;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
-body {
-  font-family: var(--font-sans);
+/* Renvoi de source : la signature visuelle du site (plan de design, section 3). */
+.renvoi {
+  color: var(--color-encre-douce);
+  font-size: var(--text-petit);
+  text-decoration: underline dotted var(--color-ancre);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-a {
-  text-underline-offset: 2px;
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-vous);
-  outline-offset: 2px;
+.renvoi:hover {
+  color: var(--color-ancre);
 }
 
 /* Rendu de METHODOLOGIE.md */
 .texte-long {
-  line-height: 1.65;
-  max-width: 48rem;
+  max-width: 66ch;
 }
-.texte-long h1 { font-size: 1.75rem; font-weight: 700; margin: 0 0 1rem; }
-.texte-long h2 { font-size: 1.35rem; font-weight: 700; margin: 2.25rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--color-trait); }
-.texte-long h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
-.texte-long p, .texte-long ul, .texte-long ol, .texte-long pre, .texte-long table, .texte-long blockquote { margin: 0.75rem 0; }
+.texte-long h1 { font-size: var(--text-h1); line-height: 1.2; margin: 0 0 1rem; }
+.texte-long h2 { font-size: var(--text-h2); line-height: 1.25; margin: 2.5rem 0 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--color-trait); }
+.texte-long h3 { font-size: var(--text-h3); line-height: 1.3; margin: 1.75rem 0 0.5rem; }
+.texte-long p, .texte-long ul, .texte-long ol, .texte-long pre, .texte-long table, .texte-long blockquote { margin: 0.9rem 0; }
 .texte-long ul { list-style: disc; padding-left: 1.5rem; }
 .texte-long ol { list-style: decimal; padding-left: 1.5rem; }
-.texte-long li { margin: 0.25rem 0; }
-.texte-long a { color: var(--color-vous); text-decoration: underline; }
-.texte-long code { font-size: 0.9em; background: #f5f5f4; padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
-.texte-long pre { background: #f5f5f4; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.85rem; }
+.texte-long li { margin: 0.3rem 0; }
+.texte-long code { font-size: 0.9em; background: var(--color-ancre-pale); padding: 0.05rem 0.3rem; border-radius: 2px; }
+.texte-long pre { background: var(--color-ancre-pale); padding: 1rem; overflow-x: auto; font-size: 0.9rem; border-radius: 2px; }
 .texte-long pre code { background: none; padding: 0; }
-.texte-long blockquote { border-left: 3px solid var(--color-trait); padding-left: 1rem; color: var(--color-encre-douce); }
-.texte-long table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 0.9rem; }
-.texte-long th, .texte-long td { border: 1px solid var(--color-trait); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
-.texte-long th { background: #f5f5f4; }
+.texte-long blockquote { border-left: 3px solid var(--color-trait-fort); padding-left: 1rem; color: var(--color-encre-douce); }
+.texte-long table { display: block; overflow-x: auto; border-collapse: collapse; font-size: var(--text-petit); max-width: 100%; }
+.texte-long th, .texte-long td { border: 1px solid var(--color-trait); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+.texte-long th { background: var(--color-ancre-pale); }
 .texte-long hr { border: 0; border-top: 1px solid var(--color-trait); margin: 2rem 0; }

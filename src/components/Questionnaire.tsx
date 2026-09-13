@@ -44,7 +44,7 @@ export default function Questionnaire() {
         choix={chef}
         onChoix={setChef}
         onRetour={() => setIndex(total - 1)}
-        onTerminer={() => router.push("/resultats")}
+        onTerminer={() => router.push("/boussole/resultats")}
       />
     );
   }
@@ -63,10 +63,10 @@ export default function Questionnaire() {
   return (
     <div className="space-y-6 max-w-2xl">
       <Progression index={index} total={total} />
-      <p className="text-sm uppercase tracking-wide text-encre-douce">{theme?.libelle}</p>
-      <h1 className="text-2xl font-semibold leading-snug">{q.enonce}</h1>
+      <p className="text-petit uppercase tracking-wide text-encre-douce">{theme?.libelle}</p>
+      <h1 className="text-h2">{q.enonce}</h1>
       {q.contexte && (
-        <details className="rounded-lg border border-trait bg-surface px-4 py-3 text-sm">
+        <details className="rounded-[3px] border border-trait bg-surface px-4 py-3 text-petit">
           <summary className="cursor-pointer font-medium">Contexte</summary>
           <p className="mt-2 text-encre-douce">{q.contexte}</p>
           {q.contexte_source && (
@@ -78,7 +78,7 @@ export default function Questionnaire() {
       )}
 
       {index === 0 && (
-        <p className="rounded-lg bg-vous-clair px-4 py-3 text-sm">
+        <p className="rounded-[3px] bg-vous-pale px-4 py-3 text-petit">
           « Neutre » veut dire que votre position est au milieu : elle compte dans le calcul. « Sans opinion » veut dire
           que vous ne vous prononcez pas : la question est retirée du calcul, sans pénalité.
         </p>
@@ -99,7 +99,7 @@ export default function Questionnaire() {
       </fieldset>
 
       <label
-        className={`flex items-center gap-3 text-sm ${!r || r.choix === "sans_opinion" ? "opacity-40" : "cursor-pointer"}`}
+        className={`flex items-center gap-3 text-petit ${!r || r.choix === "sans_opinion" ? "opacity-40" : "cursor-pointer"}`}
       >
         <input
           type="checkbox"
@@ -114,7 +114,7 @@ export default function Questionnaire() {
       <div className="flex justify-between pt-2">
         <button
           type="button"
-          className="rounded-lg border border-trait px-4 py-2 disabled:opacity-40"
+          className="rounded-[3px] border border-trait px-4 py-2 disabled:opacity-40"
           disabled={index === 0}
           onClick={() => setIndex(index - 1)}
         >
@@ -122,7 +122,7 @@ export default function Questionnaire() {
         </button>
         <button
           type="button"
-          className="rounded-lg bg-encre text-white px-5 py-2 font-semibold disabled:opacity-40"
+          className="rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold disabled:opacity-40"
           disabled={!r}
           onClick={() => setIndex(index + 1)}
         >
@@ -136,7 +136,7 @@ export default function Questionnaire() {
 function Progression({ index, total }: { index: number; total: number }) {
   return (
     <div>
-      <div className="flex justify-between text-sm text-encre-douce mb-1">
+      <div className="flex justify-between text-petit text-encre-douce mb-1">
         <span>
           Question {index + 1} sur {total}
         </span>
@@ -170,9 +170,9 @@ function BoutonChoix({
       type="button"
       aria-pressed={actif}
       onClick={onClick}
-      className={`w-full text-left rounded-lg border px-4 py-3 transition ${
+      className={`w-full text-left rounded-[3px] border px-4 py-3 transition ${
         actif
-          ? "border-vous bg-vous-clair font-semibold"
+          ? "border-vous bg-vous-pale font-semibold"
           : `border-trait bg-surface hover:border-encre-douce ${discret ? "text-encre-douce" : ""}`
       }`}
     >
@@ -196,8 +196,8 @@ function QuestionChef({
 }) {
   return (
     <div className="space-y-6 max-w-2xl">
-      <p className="text-sm text-encre-douce">Dernière question — elle n&apos;entre pas dans le calcul.</p>
-      <h1 className="text-2xl font-semibold">Lequel de ces chefs ferait selon vous le meilleur premier ministre&nbsp;?</h1>
+      <p className="text-petit text-encre-douce">Dernière question — elle n&apos;entre pas dans le calcul.</p>
+      <h1 className="text-h2">Lequel de ces chefs ferait selon vous le meilleur premier ministre&nbsp;?</h1>
       <fieldset className="space-y-2">
         <legend className="sr-only">Votre choix</legend>
         {ordre.map((sigle) => {
@@ -216,12 +216,12 @@ function QuestionChef({
         </div>
       </fieldset>
       <div className="flex justify-between">
-        <button type="button" className="rounded-lg border border-trait px-4 py-2" onClick={onRetour}>
+        <button type="button" className="rounded-[3px] border border-trait px-4 py-2" onClick={onRetour}>
           Précédente
         </button>
         <button
           type="button"
-          className="rounded-lg bg-encre text-white px-5 py-2 font-semibold disabled:opacity-40"
+          className="rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold disabled:opacity-40"
           disabled={choix === undefined}
           onClick={onTerminer}
         >
@@ -235,12 +235,12 @@ function QuestionChef({
 function FinSansChef({ onRetour }: { onRetour: () => void }) {
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Questionnaire terminé</h1>
+      <h1 className="text-h2">Questionnaire terminé</h1>
       <div className="flex gap-3">
-        <button type="button" className="rounded-lg border border-trait px-4 py-2" onClick={onRetour}>
+        <button type="button" className="rounded-[3px] border border-trait px-4 py-2" onClick={onRetour}>
           Précédente
         </button>
-        <Link href="/resultats" className="rounded-lg bg-encre text-white px-5 py-2 font-semibold">
+        <Link href="/boussole/resultats" className="rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
           Voir mes résultats
         </Link>
       </div>

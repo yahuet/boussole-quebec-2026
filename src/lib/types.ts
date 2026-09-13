@@ -83,6 +83,8 @@ export interface Parti {
   du: string;
   chef: Chef;
   resultat_2022?: { pourcentage: number; source: string };
+  /** Couleur utilisée SEULEMENT à l'intérieur des points de données des graphiques (§11). */
+  couleur?: { valeur: string; source: string; releve_le: string; note?: string };
 }
 
 export interface Axe {

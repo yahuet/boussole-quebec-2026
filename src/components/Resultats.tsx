@@ -63,9 +63,9 @@ export default function Resultats() {
   if (!etat || !explication || !coordonnees) {
     return (
       <div className="space-y-4">
-        <h1 className="text-2xl font-semibold">Aucune réponse trouvée</h1>
+        <h1 className="text-h2">Aucune réponse trouvée</h1>
         <p>Vos réponses ne sont gardées que dans cet onglet, sauf si vous avez choisi de les conserver sur cet appareil.</p>
-        <Link href="/questionnaire" className="inline-block rounded-lg bg-encre text-white px-5 py-2 font-semibold">
+        <Link href="/boussole" className="inline-block rounded-[3px] bg-ancre text-white hover:bg-ancre-fonce no-underline px-5 py-2 font-semibold">
           Commencer le questionnaire
         </Link>
       </div>
@@ -86,7 +86,7 @@ export default function Resultats() {
 
   return (
     <div className="space-y-10">
-      <h1 className="text-3xl font-bold">Vos résultats</h1>
+      <h1 className="text-h1">Vos résultats</h1>
 
       <SectionTexte section={tete} />
 
@@ -103,25 +103,25 @@ export default function Resultats() {
 
       <DetailQuestions reponses={etat.reponses} ordre={ordre} />
 
-      <section className="rounded-lg border border-trait bg-surface p-4 space-y-3">
-        <h2 className="text-lg font-semibold">Vos réponses</h2>
+      <section className="rounded-[3px] border border-trait bg-surface p-4 space-y-3">
+        <h2 className="text-h4">Vos réponses</h2>
         <label className="flex items-start gap-3 cursor-pointer">
           <input type="checkbox" className="mt-1 h-5 w-5 accent-vous" checked={conserve} onChange={basculerConservation} />
           <span>
             Conserver mes réponses sur cet appareil, pour voir mes résultats recalculés si les positions des partis
             changent pendant la campagne.
-            <span className="block text-sm text-encre-douce">
+            <span className="block text-petit text-encre-douce">
               Elles restent dans ce navigateur seulement ; rien n&apos;est envoyé. À éviter sur un appareil partagé.
             </span>
           </span>
         </label>
-        <div className="flex flex-wrap gap-3 text-sm">
-          <Link href="/questionnaire" className="rounded-lg border border-trait px-4 py-2">
+        <div className="flex flex-wrap gap-3 text-petit">
+          <Link href="/boussole" className="rounded-[3px] border border-trait px-4 py-2">
             Modifier mes réponses
           </Link>
           <button
             type="button"
-            className="rounded-lg border border-trait px-4 py-2"
+            className="rounded-[3px] border border-trait px-4 py-2"
             onClick={() => {
               effacerTout();
               setEtat(null);

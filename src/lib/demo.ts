@@ -73,6 +73,7 @@ export function donneesDemo(): Donnees {
       le: `le parti ${s.slice(1)}`,
       du: `du parti ${s.slice(1)}`,
       chef: { nom: `Chef fictif ${s.slice(1)}`, source: "https://exemple.invalid" },
+      couleur: { valeur: ["#8A6D3B", "#3B5B8A", "#8A3B55", "#3B8A6D", "#6D3B8A"][SIGLES.indexOf(s)], source: "https://exemple.invalid", releve_le: "2026-09-13" },
     })),
     axes: [
       { id: "economique", libelle: "Axe économique", pole_negatif: "Rôle accru de l'État", pole_positif: "Rôle accru du marché" },

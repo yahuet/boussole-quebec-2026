@@ -1,0 +1,119 @@
+{
+  "mots_par_resume": 50,
+  "a_jour_au": "2026-09-13",
+  "regle": "Même gabarit et exactement 50 mots pour chaque parti ; chaque phrase est liée à sa source (plan de design, section 5).",
+  "resumes": {
+    "CAQ": [
+      {
+        "texte": "Cheffe : Christine Fréchette, depuis le 12 avril 2026.",
+        "source": "https://ici.radio-canada.ca/info/en-direct/1013685/chef-caq-course-christine-frechette-bernard-drainville"
+      },
+      {
+        "texte": "À l'élection générale de 2022, le parti a obtenu 40,98 % des votes valides et 90 sièges.",
+        "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/"
+      },
+      {
+        "texte": "Pour 2026, ses engagements sont publiés un à un sous forme de communiqués sur son site,",
+        "source": "https://coalitionavenirquebec.org/fr/actualites/"
+      },
+      {
+        "texte": "et son cadre financier est paru le 30 août 2026.",
+        "source": "https://coalitionavenirquebec.org/wp-content/uploads/2026/08/cadre-financier-v8-30-aout.pdf"
+      }
+    ],
+    "PCQ": [
+      {
+        "texte": "Chef : Éric Duhaime, depuis le 17 avril 2021.",
+        "source": "https://conservateur.quebec/notre-chef/"
+      },
+      {
+        "texte": "À l'élection générale de 2022, le parti a obtenu 12,91 % des votes valides et aucun siège.",
+        "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/"
+      },
+      {
+        "texte": "Pour 2026, sa plateforme électorale officielle est parue en août, puis complétée par plusieurs plateformes thématiques,",
+        "source": "https://conservateur.quebec/documents-officiels/"
+      },
+      {
+        "texte": "et son cadre financier est paru le 9 septembre 2026.",
+        "source": "https://conservateur.quebec/wp-content/uploads/2026/09/Cadre-Financier_VF.pdf"
+      }
+    ],
+    "PLQ": [
+      {
+        "texte": "Chef : Charles Milliard, depuis le 13 février 2026.",
+        "source": "https://plq.org/charles-milliard/"
+      },
+      {
+        "texte": "À l'élection générale de 2022, le parti a obtenu 14,37 % des votes valides et 21 sièges.",
+        "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/"
+      },
+      {
+        "texte": "Pour 2026, ses engagements sont réunis sur une page de son site,",
+        "source": "https://plq.org/engagements/"
+      },
+      {
+        "texte": "enrichie au fil de la campagne à mesure que le chef les annonce publiquement.",
+        "source": "https://plq.org/engagements/"
+      }
+    ],
+    "PQ": [
+      {
+        "texte": "Chef : Paul St-Pierre Plamondon, depuis le 9 octobre 2020.",
+        "source": "https://ici.radio-canada.ca/nouvelle/1739956/part-quebecois-chef-course-election-candidats"
+      },
+      {
+        "texte": "À l'élection générale de 2022, le parti a obtenu 14,61 % des votes valides et 3 sièges.",
+        "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/"
+      },
+      {
+        "texte": "Pour 2026, son programme « Projet national » a été adopté en congrès en janvier,",
+        "source": "https://pq.org/wp-content/uploads/2026/05/PQ-PROPOSITION-PRINCIPALE-PROJET-NATIONAL-V5-individuel.pdf"
+      },
+      {
+        "texte": "et son cadre financier est annoncé pour le mardi 15 septembre 2026.",
+        "source": "https://ici.radio-canada.ca/nouvelle/2282674/parti-quebecois-130-millions-cadre-financier-referendum"
+      }
+    ],
+    "QS": [
+      {
+        "texte": "Candidate au poste de première ministre : Ruba Ghazal, désignée le 9 novembre 2025.",
+        "source": "https://www.ctvnews.ca/montreal/article/ruba-ghazal-to-run-for-premier-with-quebec-solidaire-in-2026/"
+      },
+      {
+        "texte": "À l'élection générale de 2022, le parti a obtenu 15,43 % des votes valides et 11 sièges.",
+        "source": "https://www.electionsquebec.qc.ca/resultats-et-statistiques/resultats-generales/2022-10-03/"
+      },
+      {
+        "texte": "Pour 2026, sa plateforme a été adoptée en congrès en mai,",
+        "source": "https://www.lereveil.com/actualites/665269/quebec-solidaire-devoile-sa-plateforme-electorale"
+      },
+      {
+        "texte": "et son cadre financier est paru le 11 septembre 2026.",
+        "source": "https://ici.radio-canada.ca/nouvelle/2282780/cadre-financier-quebec-solidaire-qs"
+      }
+    ]
+  },
+  "fiches": {
+    "CAQ": {
+      "titre_chef": "cheffe",
+      "site_officiel": "https://coalitionavenirquebec.org/"
+    },
+    "PCQ": {
+      "titre_chef": "chef",
+      "site_officiel": "https://conservateur.quebec/"
+    },
+    "PLQ": {
+      "titre_chef": "chef",
+      "site_officiel": "https://plq.org/"
+    },
+    "PQ": {
+      "titre_chef": "chef",
+      "site_officiel": "https://pq.org/"
+    },
+    "QS": {
+      "titre_chef": "candidate au poste de première ministre",
+      "site_officiel": "https://quebecsolidaire.net/"
+    }
+  }
+}

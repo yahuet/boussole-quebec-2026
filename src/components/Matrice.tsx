@@ -22,12 +22,12 @@ export default function Matrice() {
   const ordre = mode === "alpha" || !client ? alphabetique() : ordreSession(donnees.partis.map((p) => p.sigle));
 
   if (donnees.questions.length === 0) {
-    return <p className="rounded-lg border border-trait bg-surface p-4">La matrice est en cours de constitution.</p>;
+    return <p className="rounded-[3px] border border-trait bg-surface p-4">La matrice est en cours de constitution.</p>;
   }
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-wrap items-center gap-2 text-sm" role="group" aria-label="Ordre des partis">
+      <div className="flex flex-wrap items-center gap-2 text-petit" role="group" aria-label="Ordre des partis">
         <span className="text-encre-douce">Ordre des partis :</span>
         {(
           [
@@ -40,7 +40,7 @@ export default function Matrice() {
             type="button"
             aria-pressed={mode === m}
             onClick={() => setMode(m)}
-            className={`rounded-full border px-3 py-1 ${mode === m ? "border-encre bg-encre text-white" : "border-trait bg-surface"}`}
+            className={`rounded-[3px] border px-3 py-2 min-h-12 ${mode === m ? "border-ancre bg-ancre text-white hover:bg-ancre-fonce no-underline" : "border-trait bg-surface"}`}
           >
             {t}
           </button>
@@ -49,9 +49,9 @@ export default function Matrice() {
 
       {donnees.themes.map((theme) => (
         <section key={theme.id} className="space-y-4">
-          <h2 className="text-xl font-semibold border-b border-trait pb-1">{theme.libelle}</h2>
+          <h2 className="text-h3 border-b border-trait pb-1">{theme.libelle}</h2>
           {theme.note_couverture && (
-            <p className="rounded-lg border border-amber-300 bg-alerte-fond p-3 text-sm">
+            <p className="rounded-[3px] border border-alerte bg-alerte-fond p-3 text-petit">
               <span className="font-semibold">Thème incomplet. </span>
               {theme.note_couverture}
             </p>
@@ -71,14 +71,14 @@ function CarteQuestion({ question, ordre }: { question: Question; ordre: string[
   const axe = donnees.axes.find((a) => a.id === question.axe);
   const pole = question.sens === 1 ? axe?.pole_positif : axe?.pole_negatif;
   return (
-    <article className="rounded-lg border border-trait bg-surface p-4 space-y-3" id={question.id}>
+    <article className="rounded-[3px] border border-trait bg-surface p-4 space-y-3" id={question.id}>
       <header className="space-y-1">
-        <p className="text-xs text-encre-douce">
+        <p className="text-petit text-encre-douce">
           {question.id} · {axe?.libelle} · « d&apos;accord » rapproche du pôle « {pole} »
         </p>
         <h3 className="font-semibold">{question.enonce}</h3>
         {question.contexte && (
-          <p className="text-sm text-encre-douce">
+          <p className="text-petit text-encre-douce">
             Contexte : {question.contexte}{" "}
             {question.contexte_source && (
               <a className="underline" href={question.contexte_source}>
@@ -100,7 +100,7 @@ function CarteQuestion({ question, ordre }: { question: Question; ordre: string[
 function CellulePosition({ sigle, position }: { sigle: string; position: Position | undefined }) {
   const parti = donnees.partis.find((p) => p.sigle === sigle);
   return (
-    <div className="rounded border border-trait p-3 text-sm space-y-1">
+    <div className="rounded border border-trait p-3 text-petit space-y-1">
       <p className="font-medium">
         {parti?.nom} <span className="text-encre-douce">({sigle})</span>
       </p>
@@ -138,7 +138,7 @@ function CellulePosition({ sigle, position }: { sigle: string; position: Positio
           {position.drapeaux.length > 0 && (
             <p className="flex flex-wrap gap-1">
               {position.drapeaux.map((d) => (
-                <span key={d} className="rounded bg-alerte-fond text-alerte px-1.5 py-0.5 text-xs">
+                <span key={d} className="rounded bg-alerte-fond text-alerte px-1.5 py-0.5 text-petit">
                   {LIBELLES_DRAPEAU[d]}
                 </span>
               ))}
@@ -148,7 +148,7 @@ function CellulePosition({ sigle, position }: { sigle: string; position: Positio
         </>
       )}
       {position?.historique && position.historique.length > 0 && (
-        <details className="text-xs">
+        <details className="text-petit">
           <summary className="cursor-pointer">Historique ({position.historique.length})</summary>
           <ul className="mt-1 space-y-1">
             {position.historique.map((h, i) => (

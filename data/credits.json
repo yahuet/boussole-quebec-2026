@@ -1,0 +1,14 @@
+{
+  "description": "Crédits des images et des polices du site. La page /credits est générée à partir de ce fichier. Une image n'est affichée que si son entrée existe ici, avec une licence libre et son auteur.",
+  "images": [],
+  "polices": [
+    {
+      "nom": "Atkinson Hyperlegible Next",
+      "auteur": "The Atkinson Hyperlegible Next Project Authors (Braille Institute of America)",
+      "source": "https://github.com/googlefonts/atkinson-hyperlegible-next",
+      "licence": "SIL Open Font License 1.1",
+      "licence_url": "https://openfontlicense.org",
+      "consulte_le": "2026-09-13"
+    }
+  ]
+}
