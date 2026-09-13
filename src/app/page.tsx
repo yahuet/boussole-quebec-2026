@@ -11,7 +11,7 @@ export default function Accueil() {
           De quelles plateformes vos idées se rapprochent-elles&nbsp;?
         </h1>
         <p className="text-lg text-encre-douce max-w-2xl">
-          Répondez à 30 questions sur des mesures précises. L&apos;outil compare vos réponses aux positions écrites de cinq
+          Répondez à {donnees.questions.length || "une trentaine de"} questions sur des mesures précises. L&apos;outil compare vos réponses aux positions écrites de cinq
           partis pour l&apos;élection générale québécoise du 5 octobre 2026, et vous explique le résultat, réponse par
           réponse — y compris vos désaccords avec le parti le plus proche.
         </p>
@@ -61,7 +61,7 @@ export default function Accueil() {
         <ul className="list-disc pl-6 space-y-1 text-encre-douce">
           <li>Il ne vous dit pas pour qui voter. Ce n&apos;est pas une recommandation de vote.</li>
           <li>Il ne juge pas la crédibilité des engagements, le bilan des partis ni leurs équipes.</li>
-          <li>Il ne couvre que 30 mesures : d&apos;autres enjeux peuvent compter davantage pour vous.</li>
+          <li>Il ne couvre qu&apos;un nombre limité de mesures : d&apos;autres enjeux peuvent compter davantage pour vous.</li>
           <li>Il ne tient pas compte des candidates et candidats de votre circonscription.</li>
         </ul>
       </section>

@@ -3,6 +3,7 @@ import { join } from "node:path";
 import type { Metadata } from "next";
 import { marked } from "marked";
 import type { RapportAudit } from "@/lib/audit";
+import { donnees } from "@/lib/donnees";
 import { formaterDate } from "@/lib/libelles";
 
 export const metadata: Metadata = { title: "Méthodologie — Boussole électorale Québec 2026" };
@@ -22,6 +23,7 @@ export default function Methodologie() {
   const html = marked.parse(readFileSync(join(process.cwd(), "METHODOLOGIE.md"), "utf8"), { async: false }) as string;
   const audit = lireAudit();
   const alertes = audit?.criteres.filter((c) => c.statut === "alerte") ?? [];
+  const incomplets = donnees.questions.length === 0 ? [] : donnees.themes.filter((t) => t.note_couverture);
 
   return (
     <div className="space-y-8">
@@ -45,6 +47,25 @@ export default function Methodologie() {
               </ul>
             </div>
           ))}
+        </section>
+      )}
+
+      {incomplets.length > 0 && (
+        <section className="rounded-lg border border-amber-300 bg-alerte-fond p-4 space-y-2">
+          <h2 className="font-semibold">Thèmes incomplets dans la version actuelle des données</h2>
+          <p className="text-sm">
+            Ces thèmes comptent moins de 3 questions : aucune autre mesure ne remplissait les critères de la section 2.3.
+          </p>
+          <ul className="list-disc pl-6 text-sm space-y-1">
+            {incomplets.map((t) => (
+              <li key={t.id}>
+                <span className="font-medium">
+                  {t.libelle} ({donnees.questions.filter((q) => q.theme === t.id).length} question(s))
+                </span>{" "}
+                : {t.note_couverture}
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

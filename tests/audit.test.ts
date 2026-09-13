@@ -59,6 +59,14 @@ describe("audit de neutralité (§12)", () => {
     expect(a6?.details.join(" ")).toContain("PA");
   });
 
+  it("accepte un thème incomplet seulement avec une note publique (A1, version 1.1)", () => {
+    const d = jeu((i) => SIGLES.map((_, k) => ((i + k) % 2 === 0 ? 2 : -2)));
+    d.questions = d.questions.filter((q) => q.theme !== "services_sociaux");
+    expect(statut(d, "A1")?.statut).toBe("echec");
+    d.themes = d.themes.map((t) => (t.id === "services_sociaux" ? { ...t, note_couverture: "Aucune mesure ne départage 4 partis." } : t));
+    expect(statut(d, "A1")?.statut).toBe("ok");
+  });
+
   it("exige une question couverte par au moins 4 partis (A5a)", () => {
     const d = jeu((i) => SIGLES.map((_, k) => (i === 0 && k < 2 ? null : (i + k) % 2 === 0 ? 2 : -2)));
     expect(statut(d, "A5a")?.statut).toBe("echec");

@@ -50,6 +50,12 @@ export default function Matrice() {
       {donnees.themes.map((theme) => (
         <section key={theme.id} className="space-y-4">
           <h2 className="text-xl font-semibold border-b border-trait pb-1">{theme.libelle}</h2>
+          {theme.note_couverture && (
+            <p className="rounded-lg border border-amber-300 bg-alerte-fond p-3 text-sm">
+              <span className="font-semibold">Thème incomplet. </span>
+              {theme.note_couverture}
+            </p>
+          )}
           {donnees.questions
             .filter((q) => q.theme === theme.id)
             .map((q) => (

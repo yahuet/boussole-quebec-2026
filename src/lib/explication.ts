@@ -79,8 +79,8 @@ export interface ContexteExplication {
   changements?: { depuis: string; liste: Changement[]; scoresAvant: ResultatParti[] };
 }
 
-export const RAPPEL =
-  "Cet outil mesure l'écart entre vos réponses et les positions écrites de cinq partis sur 30 mesures. " +
+export const rappel = (nbQuestions: number) =>
+  `Cet outil mesure l'écart entre vos réponses et les positions écrites de cinq partis sur ${nbQuestions} mesures. ` +
   "Il ne tient pas compte des autres enjeux, du bilan des partis, de leurs équipes ni de vos candidates et candidats locaux. " +
   "Ce n'est pas une recommandation de vote.";
 
@@ -489,7 +489,7 @@ export function genererExplication(donnees: Donnees, reponses: Reponses, context
             },
           ],
         },
-        { id: "rappel", titre: "À retenir", blocs: [{ type: "paragraphe", texte: RAPPEL }] },
+        { id: "rappel", titre: "À retenir", blocs: [{ type: "paragraphe", texte: rappel(donnees.questions.length) }] },
       ],
     };
   }
@@ -510,7 +510,7 @@ export function genererExplication(donnees: Donnees, reponses: Reponses, context
   if (chef) sections.push(chef);
   const changements = sectionChangements(donnees, resultats, contexte);
   if (changements) sections.push(changements);
-  sections.push({ id: "rappel", titre: "À retenir", blocs: [{ type: "paragraphe", texte: RAPPEL }] });
+  sections.push({ id: "rappel", titre: "À retenir", blocs: [{ type: "paragraphe", texte: rappel(donnees.questions.length) }] });
 
   return { suffisant: true, resultats, resultatsSansPonderation, groupes, sections };
 }

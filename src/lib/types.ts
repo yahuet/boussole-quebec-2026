@@ -97,6 +97,8 @@ export interface Theme {
   libelle: string;
   /** Axe des questions de ce thème (§2.1). */
   axe: AxeId;
+  /** Obligatoire si le thème compte moins de 3 questions : raison publique (§2.1, version 1.1). */
+  note_couverture?: string;
 }
 
 /** §2.2 : seul thème dont une question peut être classée sur l'axe constitutionnel par exception. */

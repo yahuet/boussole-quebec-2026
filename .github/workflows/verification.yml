@@ -1,0 +1,25 @@
+name: Vérification
+
+# Chaque proposition de modification (veille, correction, code) passe par ces contrôles
+# avant que Yanick Huet la valide (METHODOLOGIE.md, sections 12 et 13.3).
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Tests
+        run: npm test
+      - name: Audit de neutralité
+        run: npx tsx scripts/audit-neutralite.ts --rapport
+      - name: Construction du site statique
+        run: npx next build

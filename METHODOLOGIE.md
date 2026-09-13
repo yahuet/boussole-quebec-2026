@@ -1,6 +1,6 @@
 # Méthodologie — Boussole électorale, élection générale québécoise du 5 octobre 2026
 
-> **Statut : version 1.0.2, approuvée par Yanick Huet le 11 septembre 2026.** Les versions 1.0.1 et 1.0.2 corrigent deux points de calcul (sections 8 et 12) ; voir `data/journal-modifications.md`.
+> **Statut : version 1.1, approuvée par Yanick Huet le 13 septembre 2026.** Version 1.0 approuvée le 11 septembre 2026. Les versions 1.0.1 et 1.0.2 corrigent deux points de calcul (sections 8 et 12). La version 1.1 permet une répartition inégale des questions entre les thèmes (sections 2.1, 2.3 et 12). Voir `data/journal-modifications.md`.
 > Ce document a été publié **avant** la collecte des données : les règles ne peuvent pas être ajustées après coup en fonction des résultats. Toute modification ultérieure sera datée, justifiée et visible dans l'historique du dépôt.
 
 Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Québec), **PCQ** (Parti conservateur du Québec), **PLQ** (Parti libéral du Québec), **PQ** (Parti Québécois), **QS** (Québec solidaire).
@@ -11,7 +11,7 @@ Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Q
 
 | Élément | Choix |
 |---|---|
-| Questions de fond | 30, soit 3 par thème, 10 thèmes |
+| Questions de fond | De 25 à 30, au plus 3 par thème, 10 thèmes. Un thème peut en compter moins lorsque les partis n'ont pas tous pris position sur les mêmes mesures (§2.1) |
 | Échelle | 5 points, de −2 à +2, plus « sans opinion » (question retirée du calcul) |
 | Importance | « Compte beaucoup pour moi » double le poids de la question |
 | Score par question | `1 − |réponse − position| / 4`, entre 0 et 1 |
@@ -29,19 +29,19 @@ Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Q
 
 ## 1. Ce que l'outil mesure — et ce qu'il ne mesure pas
 
-L'outil mesure **l'écart entre vos réponses et les positions écrites des partis** sur 30 mesures précises.
+L'outil mesure **l'écart entre vos réponses et les positions écrites des partis** sur une série de mesures précises (de 25 à 30).
 
 Il ne mesure pas :
 - la crédibilité des engagements, ni la probabilité qu'ils soient réalisés ;
 - le bilan d'un parti, la compétence de ses équipes ou la personnalité de ses chefs ;
-- les enjeux qui ne figurent pas parmi les 30 questions ;
+- les enjeux qui ne figurent pas parmi les questions ;
 - la candidature locale dans votre circonscription.
 
 Le résultat n'est pas une recommandation de vote, et aucune partie de l'interface ne le présente comme telle.
 
 L'outil couvre les cinq partis qui ont obtenu au moins 5 % des votes valides à l'élection générale de 2022. D'autres partis présentent des candidatures à cette élection.
 
-**Propriété connue.** Sept des dix thèmes portent sur des politiques économiques et sociales (21 questions sur 30). La proximité globale reflète donc surtout ces enjeux. C'est une conséquence du choix des thèmes, pas du calcul. Nous l'affichons dans la page méthodologie.
+**Propriété connue.** Sept des dix thèmes portent sur des politiques économiques et sociales (jusqu'à 21 questions). La proximité globale reflète donc surtout ces enjeux. C'est une conséquence du choix des thèmes, pas du calcul. Nous l'affichons dans la page méthodologie.
 
 ---
 
@@ -51,33 +51,41 @@ L'outil couvre les cinq partis qui ont obtenu au moins 5 % des votes valides à 
 
 | # | Thème | Questions | Axe |
 |---|---|---|---|
-| 1 | Fiscalité et finances publiques | 3 | économique |
-| 2 | Santé | 3 | économique |
-| 3 | Éducation | 3 | économique |
-| 4 | Économie et réglementation des entreprises | 3 | économique |
-| 5 | Environnement et énergie | 3 | économique |
-| 6 | Logement et habitation | 3 | économique |
-| 7 | Services sociaux et organismes communautaires | 3 | économique |
-| 8 | Question constitutionnelle | 3 | constitutionnel |
-| 9 | Immigration et langue | 3 | identitaire, sauf exception (voir 2.2) |
-| 10 | Laïcité et identité | 3 | identitaire |
-| | **Total** | **30** | |
+| 1 | Fiscalité et finances publiques | jusqu'à 3 | économique |
+| 2 | Santé | jusqu'à 3 | économique |
+| 3 | Éducation | jusqu'à 3 | économique |
+| 4 | Économie et réglementation des entreprises | jusqu'à 3 | économique |
+| 5 | Environnement et énergie | jusqu'à 3 | économique |
+| 6 | Logement et habitation | jusqu'à 3 | économique |
+| 7 | Services sociaux et organismes communautaires | jusqu'à 3 | économique |
+| 8 | Question constitutionnelle | jusqu'à 3 | constitutionnel |
+| 9 | Immigration et langue | jusqu'à 3 | identitaire, sauf exception (voir 2.2) |
+| 10 | Laïcité et identité | jusqu'à 3 | identitaire |
+| | **Total** | **de 25 à 30** | |
 
-S'ajoute une 31ᵉ question, sur les chefs, qui n'entre pas dans le calcul (section 9).
+**Thèmes incomplets (version 1.1).** Chaque thème vise 3 questions. Un thème peut en compter moins, voire aucune, lorsque aucune autre mesure ne remplit les critères de la section 2.3, en particulier la couverture d'au moins 4 partis sur 5. Pour atteindre 3 questions, on n'abaisse pas le seuil de couverture et on ne retient pas de question sur laquelle tous les partis s'entendent.
+
+Chaque thème incomplet est signalé publiquement, sur la page méthodologie et sur la page des données, avec la raison et les mesures examinées. Le total reste d'au moins 25 questions.
+
+*Pourquoi.* Au 13 septembre 2026, après quatre passes de recherche, les partis n'avaient pas pris position sur les mêmes mesures dans certains thèmes. En services sociaux, les engagements de dépense faisaient consensus, et les mesures qui les opposent n'étaient documentées que pour 1 à 3 partis. Deux voies s'offraient pour atteindre 3 questions partout : abaisser le seuil de couverture, au prix de positions non documentées plus nombreuses, ou retenir des questions sans pouvoir discriminant. Elles auraient toutes deux réduit la fiabilité du résultat.
+
+*Effet connu.* Un thème moins représenté pèse moins dans la proximité. Les critères A4 et A5 de l'audit continuent de vérifier qu'aucun parti n'en est favorisé ou désavantagé.
+
+S'ajoute une question sur les chefs, qui n'entre pas dans le calcul (section 9).
 
 ### 2.2 Les trois axes
 
-Chaque question appartient à **un seul** axe. Les axes servent uniquement à situer les réponses sur le graphique. Ils ne changent rien au calcul de proximité, qui traite les 30 questions à égalité.
+Chaque question appartient à **un seul** axe. Les axes servent uniquement à situer les réponses sur le graphique. Ils ne changent rien au calcul de proximité, qui traite toutes les questions à égalité.
 
 | Axe | Pôle −1 | Pôle +1 | Questions |
 |---|---|---|---|
-| **Économique** | Rôle accru de l'État (dépenses publiques, réglementation, services publics) | Rôle accru du marché et du secteur privé (allègement fiscal, déréglementation, prestation privée) | 21 |
-| **Constitutionnel** | Maintien ou renforcement du cadre fédéral | Autonomie accrue ou souveraineté du Québec | 3 ou 4 |
-| **Identitaire** | Latitude individuelle (port de signes religieux, services dans d'autres langues, seuils d'immigration plus élevés) | Règles communes (laïcité de l'État, exigences linguistiques, seuils d'immigration plus bas) | 5 ou 6 |
+| **Économique** | Rôle accru de l'État (dépenses publiques, réglementation, services publics) | Rôle accru du marché et du secteur privé (allègement fiscal, déréglementation, prestation privée) | selon les thèmes |
+| **Constitutionnel** | Maintien ou renforcement du cadre fédéral | Autonomie accrue ou souveraineté du Québec | selon les thèmes |
+| **Identitaire** | Latitude individuelle (port de signes religieux, services dans d'autres langues, seuils d'immigration plus élevés) | Règles communes (laïcité de l'État, exigences linguistiques, seuils d'immigration plus bas) | selon les thèmes |
 
 **Pourquoi trois axes.** L'appui à la souveraineté et l'appui aux mesures de laïcité ou de langue ne vont pas forcément ensemble. Les fusionner sur un seul axe placerait au centre des partis qui ont en réalité des positions nettes, mais dans des directions différentes.
 
-**Exception.** Une question du thème « immigration et langue » est classée sur l'axe *constitutionnel* seulement si elle porte sur le **partage des compétences** entre Québec et Ottawa (par exemple, le transfert d'un pouvoir). La répartition finale, 3/6 ou 4/5, est fixée en phase 2 et vérifiée par l'audit.
+**Exception.** Une question du thème « immigration et langue » est classée sur l'axe *constitutionnel* seulement si elle porte sur le **partage des compétences** entre Québec et Ottawa (par exemple, le transfert d'un pouvoir). La répartition finale est fixée en phase 2 et vérifiée par l'audit.
 
 Les libellés des pôles décrivent des mesures, pas des étiquettes idéologiques. L'interface n'emploie ni « gauche », ni « droite », ni « progressiste », ni « conservateur ».
 
@@ -89,12 +97,12 @@ Une question est retenue seulement si elle remplit **toutes** les conditions sui
 
 1. **Pertinence.** La mesure figure dans au moins une plateforme 2026, ou elle est débattue dans la campagne ou à l'Assemblée nationale pendant la législature actuelle.
 2. **Pouvoir discriminant.** Au moins un parti a une position positive (> 0) et au moins un parti a une position négative (< 0). Une question sur laquelle les cinq partis s'entendent n'aide pas à distinguer les partis.
-3. **Couverture au lancement.** Au moins **4 partis sur 5** ont une position documentée. Sinon, la question est remplacée par une autre du même thème.
+3. **Couverture au lancement.** Au moins **4 partis sur 5** ont une position documentée. Sinon, la question est remplacée par une autre du même thème ; faute de remplaçante, le thème reste incomplet (§2.1).
 4. **Équilibre de l'ensemble.** Les contraintes de l'audit (section 12) sont respectées : répartition du `sens` et neutralité des profils uniformes.
 
 Les questions écartées sont consignées dans `data/journal-modifications.md`, avec le motif du rejet.
 
-**Ces critères s'appliquent jusqu'au lancement.** Ensuite, les 30 énoncés sont gelés, et seules les positions des partis évoluent (section 13).
+**Ces critères s'appliquent jusqu'au lancement.** Ensuite, les énoncés sont gelés, et seules les positions des partis évoluent (section 13).
 
 ### 2.4 Ordre de présentation
 
@@ -292,7 +300,7 @@ Le résultat se situe entre −1 et +1.
 
 ## 9. La question du chef
 
-- Elle est **posée après les 30 questions**, sur un écran distinct : « Lequel de ces chefs ferait selon vous le meilleur premier ministre ? »
+- Elle est **posée après les questions de fond**, sur un écran distinct : « Lequel de ces chefs ferait selon vous le meilleur premier ministre ? »
 - Les choix sont présentés dans l'ordre aléatoire stable de la session, avec **le nom et le sigle du parti, sans photo**, dans une typographie identique. L'option « Aucun / je ne sais pas » est offerte.
 - Pour un parti qui a plus d'une personne porte-parole, on présente la personne que le parti désigne officiellement pour le poste de premier ministre. La liste est vérifiée et sourcée en phase 2.
 - **Elle n'entre pas dans le calcul.**
@@ -348,7 +356,7 @@ c_{k,q} = w_q × ( s_{k,q} − moyenne des s_{j,q} des autres partis documentés
 - *Changements depuis votre dernière visite* (seulement si vous avez conservé vos réponses) : le contenu de la section 13.7.
 - *Version des données :* le numéro et la date de la version utilisée (« données à jour au … »).
 
-**6. Rappel.** « Cet outil mesure l'écart entre vos réponses et les positions écrites de cinq partis sur 30 mesures. Il ne tient pas compte des autres enjeux, du bilan des partis, de leurs équipes ni de vos candidates et candidats locaux. Ce n'est pas une recommandation de vote. »
+**6. Rappel.** « Cet outil mesure l'écart entre vos réponses et les positions écrites de cinq partis sur les N mesures du questionnaire. (N est le nombre de questions de la version des données.) Il ne tient pas compte des autres enjeux, du bilan des partis, de leurs équipes ni de vos candidates et candidats locaux. Ce n'est pas une recommandation de vote. »
 
 ### 10.3 Formulations interdites
 
@@ -376,9 +384,9 @@ Le script `scripts/audit-neutralite.ts` échoue si l'un des critères bloquants 
 
 | # | Critère | Seuil | Avant le lancement | Après le lancement |
 |---|---|---|---|---|
-| A1 | Questions par thème | Exactement 3 pour chacun des 10 thèmes | bloquant | bloquant |
-| A2 | Questions par axe | 21 sur l'axe économique ; 3 ou 4 sur l'axe constitutionnel ; le reste sur l'axe identitaire. Toute question d'immigration classée sur l'axe constitutionnel est listée pour relecture. | bloquant | bloquant |
-| A3 | Répartition du `sens` | Dans chaque axe, l'écart entre le nombre de +1 et de −1 est d'au plus 1. Dans chaque thème, les deux valeurs sont présentes. Sur l'ensemble, l'écart est d'au plus 2. | bloquant | bloquant |
+| A1 | Questions par thème | Au plus 3 par thème ; total de 25 à 30 ; chaque thème de moins de 3 questions porte une note publique qui explique pourquoi (§2.1) | bloquant | bloquant |
+| A2 | Questions par axe | Chaque question est sur l'axe de son thème. Seule exception : une question d'immigration sur le partage des compétences, classée sur l'axe constitutionnel et listée pour relecture. | bloquant | bloquant |
+| A3 | Répartition du `sens` | Dans chaque axe, l'écart entre le nombre de +1 et de −1 est d'au plus 1. Dans chaque thème de 2 questions ou plus, les deux valeurs sont présentes. Sur l'ensemble, l'écart est d'au plus 2. | bloquant | bloquant |
 | A4 | Profils uniformes | Pour les profils « tout +2 », « tout −2 » et « tout 0 » (poids 1, toutes les questions répondues), l'écart entre le score le plus haut et le plus bas est de **4 points ou moins** : les cinq partis tombent dans un seul groupe d'équivalence. | bloquant | alerte publique |
 | A4b | Profils « tout +1 » et « tout −1 » | Scores rapportés | informatif | informatif |
 | A5a | Couverture | Chaque question a au moins 4 positions documentées sur 5. Le nombre de positions non documentées par parti est rapporté. | bloquant | alerte publique |
@@ -416,7 +424,7 @@ Le script `scripts/audit-neutralite.ts` échoue si l'un des critères bloquants 
 
 | Élément | Après le lancement |
 |---|---|
-| Les 30 énoncés, leur thème, leur axe, leur `sens` | **Gelés.** Une annonce sur un sujet non couvert n'ajoute pas de question. |
+| Les énoncés, leur thème, leur axe, leur `sens` | **Gelés.** Une annonce sur un sujet non couvert n'ajoute pas de question. |
 | Positions des partis (valeur, source, extrait) | Mises à jour selon la procédure ci-dessous |
 | Note de contexte d'une question | Corrigée seulement en cas d'erreur factuelle, et consignée au journal |
 | Méthode de calcul, seuils, grille de codage | **Gelés.** Toute modification serait publiée, datée et justifiée dans ce document. |

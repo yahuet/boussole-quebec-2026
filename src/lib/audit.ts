@@ -41,7 +41,8 @@ export interface RapportAudit {
 }
 
 export const NB_THEMES = 10;
-export const QUESTIONS_PAR_THEME = 3;
+export const QUESTIONS_PAR_THEME = 3; // maximum par thème (§2.1, version 1.1)
+export const MIN_QUESTIONS = 25;
 export const SEUIL_ECART_PROFILS = 4; // A4 : 4 points ou moins
 export const SIMULATIONS = 20000; // A5b
 export const SEUIL_ECART_MOYEN = 2; // A5b : points
@@ -75,18 +76,29 @@ function critere(
   return { id, titre, statut: ok ? "ok" : siEchec, bloquant: !ok && bloquant, details, mesures };
 }
 
-// --- A1 : questions par thème ---
+// --- A1 : questions par thème (METHODOLOGIE §2.1, version 1.1) ---
 function a1(d: Donnees): ResultatCritere {
   const details: string[] = [];
-  let ok = d.themes.length === NB_THEMES && d.questions.length === NB_THEMES * QUESTIONS_PAR_THEME;
+  let ok = d.themes.length === NB_THEMES;
   if (d.themes.length !== NB_THEMES) details.push(`${d.themes.length} thèmes au lieu de ${NB_THEMES}.`);
+  if (d.questions.length < MIN_QUESTIONS || d.questions.length > NB_THEMES * QUESTIONS_PAR_THEME) {
+    ok = false;
+    details.push(`${d.questions.length} questions au total (attendu : de ${MIN_QUESTIONS} à ${NB_THEMES * QUESTIONS_PAR_THEME}).`);
+  }
   const comptes: Record<string, number> = {};
   for (const t of d.themes) {
     const n = d.questions.filter((q) => q.theme === t.id).length;
     comptes[t.id] = n;
-    if (n !== QUESTIONS_PAR_THEME) {
+    if (n > QUESTIONS_PAR_THEME) {
       ok = false;
-      details.push(`${t.libelle} : ${n} question(s) au lieu de ${QUESTIONS_PAR_THEME}.`);
+      details.push(`${t.libelle} : ${n} questions (maximum ${QUESTIONS_PAR_THEME}).`);
+    } else if (n < QUESTIONS_PAR_THEME) {
+      if (!t.note_couverture?.trim()) {
+        ok = false;
+        details.push(`${t.libelle} : ${n} question(s) sans note publique expliquant pourquoi (§2.1).`);
+      } else {
+        details.push(`${t.libelle} : thème incomplet (${n} question(s)), note publique présente.`);
+      }
     }
   }
   const orphelines = d.questions.filter((q) => !d.themes.some((t) => t.id === q.theme));
@@ -102,14 +114,6 @@ function a2(d: Donnees): ResultatCritere {
   const details: string[] = [];
   let ok = true;
   const comptes = Object.fromEntries(AXES.map((a) => [a, d.questions.filter((q) => q.axe === a).length]));
-  if (comptes.economique !== 21) {
-    ok = false;
-    details.push(`Axe économique : ${comptes.economique} questions au lieu de 21.`);
-  }
-  if (comptes.constitutionnel < 3 || comptes.constitutionnel > 4) {
-    ok = false;
-    details.push(`Axe constitutionnel : ${comptes.constitutionnel} questions (attendu : 3 ou 4).`);
-  }
   for (const q of d.questions) {
     const theme = d.themes.find((t) => t.id === q.theme);
     if (!theme || theme.axe === q.axe) continue;
@@ -120,6 +124,7 @@ function a2(d: Donnees): ResultatCritere {
       details.push(`${q.id} : axe « ${q.axe} » incompatible avec son thème « ${theme.libelle} ».`);
     }
   }
+  details.push(`Questions par axe : ${Object.entries(comptes).map(([a, n]) => `${a} ${n}`).join(", ")}.`);
   return critere("A2", "Questions par axe", ok, true, details, comptes);
 }
 
@@ -140,7 +145,7 @@ function a3(d: Donnees): ResultatCritere {
   }
   for (const t of d.themes) {
     const sens = new Set(d.questions.filter((q) => q.theme === t.id).map((q) => q.sens));
-    if (sens.size < 2 && d.questions.some((q) => q.theme === t.id)) {
+    if (sens.size < 2 && d.questions.filter((q) => q.theme === t.id).length >= 2) {
       ok = false;
       details.push(`${t.libelle} : toutes les questions ont le même sens.`);
     }

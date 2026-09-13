@@ -1,0 +1,33 @@
+{
+  "description": "Liste fermée des sources surveillées par la veille quotidienne (METHODOLOGIE.md, section 13.2). Vérifiée le 11 septembre 2026 ; voir recherche/contexte.md.",
+  "partis": {
+    "CAQ": {
+      "flux": ["https://coalitionavenirquebec.org/fr/feed/"],
+      "pages": ["https://coalitionavenirquebec.org/fr/actualites/"],
+      "remarque": "Le site bloque les robots génériques : utiliser un User-Agent de navigateur. Aucune plateforme consolidée au 11 septembre 2026 ; cadre financier du 30 août 2026."
+    },
+    "PCQ": {
+      "flux": ["https://conservateur.quebec/blog/project_category/communiques/feed/"],
+      "pages": ["https://conservateur.quebec/documents-officiels/"],
+      "remarque": "Plateformes thématiques Éducation et Immigration annoncées « dans les prochaines semaines »."
+    },
+    "PLQ": {
+      "flux": ["https://plq.org/feed/?post_type=communique"],
+      "pages": ["https://plq.org/engagements/"],
+      "remarque": "Le flux /feed/ par défaut est vide. Cadre financier non publié au 11 septembre 2026."
+    },
+    "PQ": {
+      "flux": ["https://pq.org/feed/?post_type=nouvelles"],
+      "pages": ["https://pq.org/nouvelles/", "https://pq.org/ressources/"],
+      "remarque": "Cadre financier annoncé pour le 15 septembre 2026."
+    },
+    "QS": {
+      "flux": [],
+      "pages": ["https://quebecsolidaire.net/nouvelles", "https://quebecsolidaire.net/"],
+      "remarque": "Aucun flux RSS utile ; page rendue en JavaScript. L'URL du PDF de la plateforme (CDN Webflow) change à chaque mise à jour."
+    }
+  },
+  "assemblee_nationale": {
+    "remarque": "Assemblée dissoute le 27 août 2026 : aucun nouveau vote enregistré attendu avant le scrutin."
+  }
+}
