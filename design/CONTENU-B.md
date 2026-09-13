@@ -1,6 +1,6 @@
 # Étape B — Contenu rédactionnel : accueil et /a-propos
 
-Soumis pour validation le 13 septembre 2026. Les passages entre [crochets] sont à compléter ou à confirmer par Yanick Huet ; aucun ne sera publié tel quel.
+Validé par Yanick Huet le 13 septembre 2026. Nom du site : **La boussole des élections**. Les passages encore entre [crochets] se remplissent automatiquement (nombre de questions, date, liens) ou attendent une vérification (identification, hébergeur).
 
 ---
 
@@ -154,11 +154,11 @@ Section courte. Ces deux choix vont dans une autre direction que ceux que décri
 ## À propos
 
 ### Qui publie ce site
-Ce site est publié par **Yanick Huet**[, de (ville) — à confirmer].
+Ce site est publié par **Yanick Huet**, de Hinchinbrooke.
 
-[À confirmer par Yanick Huet, et à ne publier que si c'est exact : « Je ne suis membre d'aucun parti politique et je ne travaille pour aucun d'eux. » Ajouter toute affiliation, tout emploi ou tout engagement pertinent.]
+Je ne suis membre d'aucun parti politique et je n'ai aucune affiliation politique.
 
-[À confirmer : financement. Par exemple : « Le site est financé par moi seul, sans commanditaire, publicité ni contribution d'un parti. » Préciser les coûts pris en charge : nom de domaine, hébergement.]
+J'ai financé ce site personnellement, y compris le nom de domaine et l'hébergement. Il n'a ni commanditaire, ni publicité, ni contribution d'un parti.
 
 ### Pourquoi
 En utilisant des boussoles électorales, j'ai voulu pouvoir vérifier trois choses : d'où vient la position attribuée à chaque parti, comment les questions sont rédigées, et quelles réponses produisent le résultat. Ce site est ma façon d'y répondre : une méthode publiée avant la collecte des données, une matrice de positions où chaque case a sa source, et une explication réponse par réponse.
@@ -183,12 +183,12 @@ Une position vous semble mal attribuée, une source a changé, un extrait est in
 
 Deux façons de le faire :
 - **Dans le dépôt public**, en ouvrant un signalement : [lien vers les issues GitHub]. Il faut un compte GitHub, et le signalement est public.
-- **Par courriel** : [adresse à confirmer].
+- **Par courriel** : contact@boussoleelection.ca
 
 Chaque correction acceptée est datée dans le journal des modifications, avec l'ancienne et la nouvelle source.
 
 ### Me joindre
-[adresse courriel à confirmer]
+contact@boussoleelection.ca
 
 ### Identification
 [Espace réservé : mention d'identification de l'éditeur, à remplir après vérification auprès du Directeur général des élections du Québec. Voir A-VERIFIER.md.]

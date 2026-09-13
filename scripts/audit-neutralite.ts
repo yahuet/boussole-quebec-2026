@@ -16,6 +16,13 @@ const ecrireRapport = args.includes("--rapport");
 const chemin = resolve(args.find((a) => !a.startsWith("--")) ?? "data/positions.json");
 
 const donnees = JSON.parse(readFileSync(chemin, "utf8")) as Donnees;
+
+// Tant que la matrice n'est pas publiée (aucune question dans le fichier), il n'y a rien à auditer.
+if (donnees.questions.length === 0 && !donnees.lance) {
+  console.log(`Audit de neutralité — ${chemin}
+Aucune question publiée pour l'instant : audit sans objet.`);
+  process.exit(0);
+}
 const rapport = auditer(donnees);
 
 const MARQUES: Record<Statut, string> = { ok: "[OK]    ", echec: "[ÉCHEC] ", alerte: "[ALERTE]", info: "[INFO]  " };

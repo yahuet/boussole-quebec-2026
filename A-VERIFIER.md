@@ -15,15 +15,8 @@ Liste des questions juridiques et administratives soulevées par le projet. **Ri
 
 ## Partis politiques
 
-5. **Usage des logos.** Il faut une autorisation écrite de chaque parti pour afficher son logo, marque de commerce, sur `/partis` et ailleurs. Pour chacun :
-   - CAQ — demande envoyée le : / réponse :
-   - PCQ — demande envoyée le : / réponse :
-   - PLQ — demande envoyée le : / réponse :
-   - PQ — demande envoyée le : / réponse :
-   - QS — demande envoyée le : / réponse :
-
-   Sans autorisation, le composant affiche un monogramme neutre, pour les cinq partis à la fois : un parti ne peut pas avoir son logo si un autre ne l'a pas.
-6. **Portraits des chefs.** Photos de salle de presse : les conditions d'utilisation permettent-elles un usage par un tiers non médiatique ? Portraits officiels de l'Assemblée nationale : quelles conditions de reproduction ? Voir `MEDIAS-A-OBTENIR.md` (étape D).
+5. **Logos des partis : décision de Yanick Huet (13 septembre 2026).** Aucun logo n'est utilisé ; aucune autorisation n'est demandée. Les partis sont désignés par leur nom et leur sigle, composés dans la police du site, de manière identique pour les cinq.
+6. **Portraits des chefs.** Seulement des photographies publiées sous licence libre, par exemple sur Wikimedia Commons (CC BY, CC BY-SA ou domaine public), avec l'auteur et la licence mentionnés. Aucune photo tirée d'un site de parti, d'une affiche, d'un média ou de la salle de presse. Des fichiers existent sur Commons pour les cinq chefs (recherche du 13 septembre 2026) ; la licence, l'auteur, la date et la qualité de chacun sont à vérifier à l'étape D. Si l'un des cinq n'a pas de photo libre utilisable, aucun portrait n'est affiché, pour aucun des cinq. Point de vérification : l'usage d'une photo libre d'une personnalité publique, dans le cadre de son rôle public, est-il suffisamment couvert au regard du droit à l'image (Code civil du Québec, art. 35 et 36) ?
 7. **Couleurs des partis dans les graphiques.** Les couleurs ont été relevées sur les sites officiels le 13 septembre 2026. Faut-il confirmer auprès des partis ou dans leurs chartes graphiques publiées ?
 
 ## Droit d'auteur et vie privée

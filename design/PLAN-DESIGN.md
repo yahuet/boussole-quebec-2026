@@ -361,3 +361,7 @@ Ce qui reste volontairement « standard », parce que c'est ce qu'on attend d'un
 | Hero | **Idée 1 : la question disséquée** |
 | Palette et motif | Palette de la section 1 et renoncement à la fleur de lys : adoptés tels que proposés, sauf avis contraire avant l'étape C |
 | Formulations du constat 2 (« nombre égal ») et du constat 3 (« parti arrivé premier ») | Corrigées à l'étape B pour concorder avec la méthodologie |
+
+### Décision du 13 septembre 2026 (suite) : logos et portraits
+- **Pas de logos.** Le gabarit « parti » remplace la boîte de logo par le nom complet et le sigle du parti, composés en Atkinson Hyperlegible Next, identiques pour les cinq. Aucune autorisation n'est demandée aux partis.
+- **Portraits : licences libres seulement** (Wikimedia Commons), avec l'auteur et la licence affichés sous la photo et sur `/credits`. S'il manque une photo libre utilisable pour un seul chef, aucun portrait n'est affiché (monogrammes pour les cinq).

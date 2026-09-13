@@ -1,8 +1,10 @@
-# Boussole électorale — Québec 2026
+# La boussole des élections — Québec 2026
+
+Site : boussoleelection.ca
 
 Outil d'information indépendant pour l'élection générale québécoise du 5 octobre 2026.
 
-Vous répondez à 30 questions sur des mesures de politique publique. L'outil indique de quelles plateformes vos réponses se rapprochent, et explique pourquoi, réponse par réponse. Il montre aussi vos points de désaccord avec le parti le plus proche.
+Vous répondez à une série de questions (de 25 à 30) sur des mesures de politique publique. L'outil indique de quelles plateformes vos réponses se rapprochent, et explique pourquoi, réponse par réponse. Il montre aussi vos points de désaccord avec le ou les partis les plus proches.
 
 Partis couverts : CAQ, PCQ, PLQ, PQ, QS.
 
@@ -17,10 +19,10 @@ Partis couverts : CAQ, PCQ, PLQ, PQ, QS.
 
 | Phase | État |
 |---|---|
-| 1. Méthodologie | Approuvée le 11 septembre 2026 |
-| 2. Matrice des positions sourcées | En cours |
-| 3. Application | À venir |
-| 4. Audit de neutralité | À venir |
+| 1. Méthodologie | Approuvée le 11 septembre 2026 (version 1.2 le 13 septembre) |
+| 2. Matrice des positions sourcées | En cours : positions validées au 13 septembre ; fiscalité à compléter après les cadres financiers |
+| 3. Application | Moteur de calcul, texte explicatif et pages en place ; nouveau design en cours |
+| 4. Audit de neutralité | Script en place (`scripts/audit-neutralite.ts`) |
 
 ## Signaler une erreur
 
@@ -28,4 +30,4 @@ Ouvrez une *issue* en indiquant la question, le parti, l'URL de la source et l'e
 
 ## Responsable
 
-Yanick Huet. Le codage initial et la veille des annonces sont faits avec l'aide d'un assistant d'IA (Claude, d'Anthropic). Chaque position publiée est validée par le responsable.
+Yanick Huet, Hinchinbrooke. Contact : contact@boussoleelection.ca. Le codage initial et la veille des annonces sont faits avec l'aide d'un assistant d'IA (Claude, d'Anthropic). Chaque position publiée est validée par le responsable.
