@@ -62,6 +62,8 @@ export interface Question {
   enonce: string;
   contexte?: string;
   contexte_source?: string;
+  /** Code de la candidate dans les notes de recherche (traçabilité de la sélection). */
+  code_recherche?: string;
   positions: Record<string, Position>;
 }
 

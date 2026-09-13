@@ -1,6 +1,6 @@
 # Méthodologie — Boussole électorale, élection générale québécoise du 5 octobre 2026
 
-> **Statut : version 1.0.1, approuvée par Yanick Huet le 11 septembre 2026.** (La v1.0.1 précise le calcul de la section 8 ; voir `data/journal-modifications.md`.)
+> **Statut : version 1.0.2, approuvée par Yanick Huet le 11 septembre 2026.** Les versions 1.0.1 et 1.0.2 corrigent deux points de calcul (sections 8 et 12) ; voir `data/journal-modifications.md`.
 > Ce document a été publié **avant** la collecte des données : les règles ne peuvent pas être ajustées après coup en fonction des résultats. Toute modification ultérieure sera datée, justifiée et visible dans l'historique du dépôt.
 
 Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Québec), **PCQ** (Parti conservateur du Québec), **PLQ** (Parti libéral du Québec), **PQ** (Parti Québécois), **QS** (Québec solidaire).
@@ -398,6 +398,8 @@ Le script `scripts/audit-neutralite.ts` échoue si l'un des critères bloquants 
 2. Pour chaque profil et chaque parti, on calcule `P_k` de deux façons :
    - (i) sur la base normale du parti ;
    - (ii) sur la **base commune**, c'est-à-dire seulement les questions documentées pour les cinq partis.
+
+   Les deux calculs se comparent sans le seuil d'affichage de 10 questions (§6.5). Sinon, une base commune plus petite masquerait tous les scores et ferait échouer le test par construction.
 3. **L'audit échoue** si, pour un parti, l'une des deux conditions suivantes est remplie :
    - l'écart moyen signé entre (i) et (ii) dépasse **2 points** ;
    - la fréquence d'appartenance au groupe de tête diffère de plus de **5 points de pourcentage** entre (i) et (ii).

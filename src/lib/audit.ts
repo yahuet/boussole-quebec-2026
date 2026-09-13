@@ -7,6 +7,7 @@ import {
   calculerProximites,
   estDocumentee,
   formerGroupes,
+  type ResultatParti,
 } from "./calcul";
 import { genererExplication, texteIntegral } from "./explication";
 import { FORMULATIONS_INTERDITES, MOTIF_NUMERO_LOI, MOTS_A_RELIRE, MOTS_EVALUATIFS } from "./regles";
@@ -218,6 +219,14 @@ function profilAleatoire(d: Donnees, alea: () => number): Reponses {
   return r;
 }
 
+/**
+ * A5b compare deux façons de calculer : le seuil d'affichage (§6.5) n'y joue pas.
+ * Sinon, une base commune de moins de 10 questions masquerait tous les scores et ferait échouer le test par construction.
+ */
+function sansSeuil(resultats: ResultatParti[]): ResultatParti[] {
+  return resultats.map((r) => ({ ...r, affiche: r.score !== null, arrondi: r.score === null ? null : arrondir(r.score) }));
+}
+
 // --- A5b : effet des positions non documentées ---
 function a5b(d: Donnees, simulations: number): ResultatCritere {
   const commune: Donnees = {
@@ -233,8 +242,8 @@ function a5b(d: Donnees, simulations: number): ResultatCritere {
 
   for (let i = 0; i < simulations; i++) {
     const profil = profilAleatoire(d, alea);
-    const normal = calculerProximites(d, profil);
-    const base = calculerProximites(commune, profil);
+    const normal = sansSeuil(calculerProximites(d, profil));
+    const base = sansSeuil(calculerProximites(commune, profil));
     for (const s of sigles) {
       const x = normal.find((r) => r.sigle === s)?.score;
       const y = base.find((r) => r.sigle === s)?.score;
@@ -267,7 +276,7 @@ function a5b(d: Donnees, simulations: number): ResultatCritere {
     "Rappel : avec des réponses aléatoires, les partis aux positions plus nuancées obtiennent en moyenne des scores plus élevés ; la fréquence en tête n'est pas un critère de neutralité en soi.",
   );
   if (commune.questions.length < 10) {
-    details.push("Base commune de moins de 10 questions : aucun score n'y est affiché, la comparaison est peu informative.");
+    details.push(`Base commune de ${commune.questions.length} questions seulement : la comparaison est plus bruitée.`);
   }
   return critere("A5b", "Effet des positions non documentées", ok, !d.lance, details, mesures, d.lance ? "alerte" : "echec");
 }
