@@ -1,6 +1,6 @@
 # Méthodologie — Boussole électorale, élection générale québécoise du 5 octobre 2026
 
-> **Statut : version 1.1, approuvée par Yanick Huet le 13 septembre 2026.** Version 1.0 approuvée le 11 septembre 2026. Les versions 1.0.1 et 1.0.2 corrigent deux points de calcul (sections 8 et 12). La version 1.1 permet une répartition inégale des questions entre les thèmes (sections 2.1, 2.3 et 12). Voir `data/journal-modifications.md`.
+> **Statut : version 1.2, approuvée par Yanick Huet le 13 septembre 2026.** Version 1.0 approuvée le 11 septembre 2026. Les versions 1.0.1 et 1.0.2 corrigent deux points de calcul (sections 8 et 12). La version 1.1 permet une répartition inégale des questions entre les thèmes (sections 2.1, 2.3 et 12). La version 1.2 autorise les couleurs des partis dans les points des graphiques (section 11). Voir `data/journal-modifications.md`.
 > Ce document a été publié **avant** la collecte des données : les règles ne peuvent pas être ajustées après coup en fonction des résultats. Toute modification ultérieure sera datée, justifiée et visible dans l'historique du dépôt.
 
 Partis couverts, en ordre alphabétique des sigles : **CAQ** (Coalition avenir Québec), **PCQ** (Parti conservateur du Québec), **PLQ** (Parti libéral du Québec), **PQ** (Parti Québécois), **QS** (Québec solidaire).
@@ -368,9 +368,9 @@ L'audit vérifie que les gabarits de texte ne contiennent aucune de ces formulat
 
 ## 11. Présentation visuelle
 
-- **Ordre des partis.** Il est aléatoire et stable pour la session, tiré au premier affichage et conservé dans le stockage de session du navigateur (effacé à la fermeture de l'onglet, sans cookie). Il est tiré de nouveau à chaque session, même si vous avez conservé vos réponses. Il s'applique partout : barres de résultats, graphique, question du chef, matrice des sources. Seule exception : la page « d'où viennent les données » propose aussi l'ordre alphabétique des sigles, au choix.
-- **Couleurs.** Tous les partis ont la même teinte neutre. Aucune couleur officielle n'est employée. Vos réponses ont une couleur d'accent qui ne correspond à aucun parti.
-- **Graphique.** Chaque parti y est représenté par un symbole identique et son sigle en étiquette.
+- **Ordre des partis.** Il est aléatoire et stable pour la session, tiré au premier affichage et conservé dans le stockage de session du navigateur (effacé à la fermeture de l'onglet, sans cookie). Il est tiré de nouveau à chaque session, même si vous avez conservé vos réponses. Il s'applique partout : barres de résultats, graphique, question du chef, matrice des positions, page des partis. Chaque page qui présente les partis indique que l'ordre est tiré au hasard pour la visite. Seule exception : la matrice des positions propose aussi l'ordre alphabétique des sigles, au choix.
+- **Couleurs (version 1.2).** L'habillage du site n'emploie aucune couleur de parti : ni fond, ni accent, ni bouton, ni barre de résultat. Les couleurs des partis n'apparaissent qu'**à l'intérieur des points de données des graphiques**. Elles sont relevées sur les sites officiels des partis, et la source et la date du relevé sont publiées. Vos réponses ont une couleur d'accent qui ne correspond à aucun parti.
+- **Graphique.** Chaque parti y est représenté par un point de même forme et de même taille, toujours accompagné de son sigle écrit : la couleur ne sert jamais seule à identifier un parti.
 - **Chiffres.** Scores entiers, avec `n_k` visible à côté de chaque score.
 - **Aucun élément graphique ne met un parti en valeur** : pas de médaille, de trophée, de couronne ou de « gagnant ». Un groupe de tête s'affiche comme un groupe.
 
