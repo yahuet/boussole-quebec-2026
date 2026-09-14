@@ -81,7 +81,7 @@ nslookup boussoleelection.ca
 nslookup www.boussoleelection.ca
 ```
 
-## 5. Courriel `contact@boussoleelection.ca`
+## 5. Courriel `info@boussoleelection.ca`
 
 Les enregistrements dépendent du fournisseur choisi (Google Workspace, Microsoft 365, Zoho, redirection offerte par le registraire, etc.). Ils s'ajoutent dans la même zone DNS, sans toucher aux deux enregistrements du site :
 - `MX` sur `@`, fournis par le fournisseur de courriel ;

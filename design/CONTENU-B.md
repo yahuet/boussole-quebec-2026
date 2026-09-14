@@ -183,12 +183,12 @@ Une position vous semble mal attribuée, une source a changé, un extrait est in
 
 Deux façons de le faire :
 - **Dans le dépôt public**, en ouvrant un signalement : [lien vers les issues GitHub]. Il faut un compte GitHub, et le signalement est public.
-- **Par courriel** : contact@boussoleelection.ca
+- **Par courriel** : info@boussoleelection.ca
 
 Chaque correction acceptée est datée dans le journal des modifications, avec l'ancienne et la nouvelle source.
 
 ### Me joindre
-contact@boussoleelection.ca
+info@boussoleelection.ca
 
 ### Identification
 [Espace réservé : mention d'identification de l'éditeur, à remplir après vérification auprès du Directeur général des élections du Québec. Voir A-VERIFIER.md.]

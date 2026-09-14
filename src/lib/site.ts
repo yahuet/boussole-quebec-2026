@@ -3,7 +3,7 @@
 export const NOM_SITE = "La boussole des élections";
 export const URL_SITE = "https://boussoleelection.ca";
 export const DEPOT = "https://github.com/yahuet/boussole-quebec-2026";
-export const COURRIEL = "contact@boussoleelection.ca";
+export const COURRIEL = "info@boussoleelection.ca";
 export const EDITEUR = { nom: "Yanick Huet", ville: "Hinchinbrooke" };
 
 /**

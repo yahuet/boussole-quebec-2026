@@ -30,4 +30,4 @@ Ouvrez une *issue* en indiquant la question, le parti, l'URL de la source et l'e
 
 ## Responsable
 
-Yanick Huet, Hinchinbrooke. Contact : contact@boussoleelection.ca. Le codage initial et la veille des annonces sont faits avec l'aide d'un assistant d'IA (Claude, d'Anthropic). Chaque position publiée est validée par le responsable.
+Yanick Huet, Hinchinbrooke. Contact : info@boussoleelection.ca. Le codage initial et la veille des annonces sont faits avec l'aide d'un assistant d'IA (Claude, d'Anthropic). Chaque position publiée est validée par le responsable.
