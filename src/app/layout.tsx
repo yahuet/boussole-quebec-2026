@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { donnees, estDemo } from "@/lib/donnees";
+import { donnees, estApercu, estDemo } from "@/lib/donnees";
 import { formaterDate } from "@/lib/libelles";
 import { COURRIEL, DEPOT, IDENTIFICATION_EDITEUR, NOM_SITE, URL_SITE } from "@/lib/site";
 import "./globals.css";
@@ -72,6 +72,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {estDemo && (
           <p className="bg-alerte-fond text-alerte text-petit text-center px-4 py-2">
             Données fictives de démonstration : aucun parti réel, aucune position réelle.
+          </p>
+        )}
+        {estApercu && (
+          <p className="bg-alerte-fond text-alerte text-petit text-center px-4 py-2">
+            Aperçu local, non publié : sélection provisoire de {donnees.questions.length} questions, non validée, audit
+            de neutralité non réussi.
           </p>
         )}
         <header className="bg-ancre text-white">

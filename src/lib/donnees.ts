@@ -11,9 +11,15 @@ function charger(): Donnees {
     if (process.env.VERCEL === "1") throw new Error("Le jeu de démonstration ne peut pas être déployé.");
     return donneesDemo();
   }
-  return reelles as Donnees;
+  const d = reelles as Donnees;
+  // Aperçu local d'une sélection provisoire (scripts/generer-positions.ts) : jamais déployable.
+  if (d.version.startsWith("apercu") && process.env.VERCEL === "1") {
+    throw new Error("Un aperçu local non validé ne peut pas être déployé.");
+  }
+  return d;
 }
 
 export const donnees: Donnees = charger();
 export const estDemo = process.env.NEXT_PUBLIC_DEMO === "1";
+export const estApercu = donnees.version.startsWith("apercu");
 export const donneesPretes = donnees.questions.length > 0;
